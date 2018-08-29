@@ -229,6 +229,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/冒泡排序和选择排序流程图/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/29/冒泡排序和选择排序流程图/" itemprop="url">冒泡排序和选择排序流程图</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T14:54:15+08:00">
+                2018-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
+<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
+<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
+</ol>
+<h4 id="冒泡排序流程图"><a href="#冒泡排序流程图" class="headerlink" title="冒泡排序流程图"></a>冒泡排序流程图</h4><p><img src="https://user-gold-cdn.xitu.io/2018/6/25/16436af307e81502?w=498&amp;h=1020&amp;f=png&amp;s=40181" alt=""></p>
+<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><pre><code>a &lt;- {
+&apos;0&apos;:4,
+&apos;1&apos;:6,
+&apos;2&apos;:3,
+&apos;3&apos;:2,
+&apos;4&apos;:1,
+&apos;length&apos;: 5
+}
+轮数 = 1
+左手指向的下标 
+
+while(轮数 &lt; a[&apos;length&apos;])
+    左标 = 0
+    while(左标 &lt;= a[&apos;length&apos;] - 1 - 轮数)
+        if a[左下标] &lt; a[左下标+1]
+        else
+            t &lt;- a[左标]
+            a[左标] &lt;- a[左标+1]
+            a[左标+1] &lt;- t
+        end
+        左标 &lt;- 左标+1
+    end
+    轮数 &lt;- 轮数 + 1
+end
+print a
+</code></pre><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p><strong>工作原理</strong>: 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<h4 id="选择排序流程图"><a href="#选择排序流程图" class="headerlink" title="选择排序流程图"></a>选择排序流程图</h4><p><img src="https://user-gold-cdn.xitu.io/2018/6/11/163ee33b498539b7?w=454&amp;h=1022&amp;f=png&amp;s=43998" alt=""></p>
+<h4 id="伪代码-1"><a href="#伪代码-1" class="headerlink" title="伪代码"></a>伪代码</h4><pre><code>    a&lt;-{
+    &apos;0&apos;=4,
+    &apos;1&apos;=6,
+    &apos;2&apos;=3,
+    &apos;3&apos;=2,
+    &apos;4&apos;=1,
+    &apos;length&apos;=5
+}
+轮数=1
+    while(轮数&lt;a[&apos;length&apos;])
+        min左标&lt;-轮数-1;左标&lt;-min左标+1
+        while(左标&lt;a[&apos;length&apos;])
+            if  a[左标]&lt;a[min左标]
+                a[min左标]&lt;-a[左标]
+            else
+                什么也不做
+            end
+            左标&lt;-左标+1
+        end
+        t&lt;-a[轮数-1]
+        a[轮数-1]&lt;-a[min左标]
+        a[min左标]&lt;-t
+
+        轮数&lt;-轮数+1
+    end
+    print a
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/CSS布局/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1455,7 +1634,7 @@ align-items: center;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
