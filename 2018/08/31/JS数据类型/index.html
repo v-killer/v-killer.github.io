@@ -79,17 +79,19 @@
 
 
 
-<meta name="description" content="鼠标事件MouseEvent接口指用户与指针设备(如鼠标)交互时发生的事件。  mousedown在元素上按下任意鼠标按键。 mouseup在元素上释放任意鼠标按键。 mousemove指针在元素内移动时持续触发。 click在元素上按下并释放任意鼠标按键。  监听鼠标事件div.onmousedown = function(x){     console.log(x) } 属性 clientX当">
+<meta name="description" content="JS历史 数据类型七种数据类型(请背诵):   number(数值)  string(字符串)  boolean(布尔值)  Symbol(符号)  object(对象)  undefined  null   注意：没有arry类型也没有function类型。   number   整数和小数：1 0.1 .1 科学计数法: 1.23e2 二进制: 0b11 八进制: 011(后来ES5添加了0o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="监听鼠标事件">
-<meta property="og:url" content="http://yoursite.com/2018/08/31/监听鼠标事件/index.html">
+<meta property="og:title" content="JS数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/08/31/JS数据类型/index.html">
 <meta property="og:site_name" content="Study Notes">
-<meta property="og:description" content="鼠标事件MouseEvent接口指用户与指针设备(如鼠标)交互时发生的事件。  mousedown在元素上按下任意鼠标按键。 mouseup在元素上释放任意鼠标按键。 mousemove指针在元素内移动时持续触发。 click在元素上按下并释放任意鼠标按键。  监听鼠标事件div.onmousedown = function(x){     console.log(x) } 属性 clientX当">
+<meta property="og:description" content="JS历史 数据类型七种数据类型(请背诵):   number(数值)  string(字符串)  boolean(布尔值)  Symbol(符号)  object(对象)  undefined  null   注意：没有arry类型也没有function类型。   number   整数和小数：1 0.1 .1 科学计数法: 1.23e2 二进制: 0b11 八进制: 011(后来ES5添加了0o">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-31T05:41:10.080Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/7/13/1649401a87b13c0b?w=1554&h=259&f=png&s=42047">
+<meta property="og:updated_time" content="2018-08-31T05:42:16.807Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="监听鼠标事件">
-<meta name="twitter:description" content="鼠标事件MouseEvent接口指用户与指针设备(如鼠标)交互时发生的事件。  mousedown在元素上按下任意鼠标按键。 mouseup在元素上释放任意鼠标按键。 mousemove指针在元素内移动时持续触发。 click在元素上按下并释放任意鼠标按键。  监听鼠标事件div.onmousedown = function(x){     console.log(x) } 属性 clientX当">
+<meta name="twitter:title" content="JS数据类型">
+<meta name="twitter:description" content="JS历史 数据类型七种数据类型(请背诵):   number(数值)  string(字符串)  boolean(布尔值)  Symbol(符号)  object(对象)  undefined  null   注意：没有arry类型也没有function类型。   number   整数和小数：1 0.1 .1 科学计数法: 1.23e2 二进制: 0b11 八进制: 011(后来ES5添加了0o">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/7/13/1649401a87b13c0b?w=1554&h=259&f=png&s=42047">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/31/监听鼠标事件/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/31/JS数据类型/"/>
 
 
 
 
 
-  <title>监听鼠标事件 | Study Notes</title>
+  <title>JS数据类型 | Study Notes</title>
   
 
 
@@ -232,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/监听鼠标事件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/JS数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -249,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">监听鼠标事件</h1>
+          <h1 class="post-title" itemprop="name headline">JS数据类型</h1>
         
 
         <div class="post-meta">
@@ -261,7 +263,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T13:40:54+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T13:41:56+08:00">
                 2018-08-31
               </time>
             
@@ -299,42 +301,109 @@
       
 
       
-        <h3 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h3><p><code>MouseEvent</code>接口指用户与指针设备(如鼠标)交互时发生的事件。</p>
+        <h4 id="JS历史"><a href="#JS历史" class="headerlink" title="JS历史"></a>JS历史</h4><p><img src="https://user-gold-cdn.xitu.io/2018/7/13/1649401a87b13c0b?w=1554&amp;h=259&amp;f=png&amp;s=42047" alt=""></p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>七种数据类型(请背诵): </p>
 <ul>
-<li><code>mousedown</code>在元素上按下任意鼠标按键。</li>
-<li><code>mouseup</code>在元素上释放任意鼠标按键。</li>
-<li><code>mousemove</code>指针在元素内移动时持续触发。</li>
-<li><code>click</code>在元素上按下并释放任意鼠标按键。</li>
+<li><code>number</code>(数值) </li>
+<li><code>string</code>(字符串) </li>
+<li><code>boolean</code>(布尔值) </li>
+<li><code>Symbol</code>(符号) </li>
+<li><code>object</code>(对象) </li>
+<li><code>undefined</code> </li>
+<li><code>null</code>  </li>
+<li>注意：没有<code>arry</code>类型也没有<code>function</code>类型。</li>
 </ul>
-<h4 id="监听鼠标事件"><a href="#监听鼠标事件" class="headerlink" title="监听鼠标事件"></a>监听鼠标事件</h4><pre><code>div.onmousedown = function(x){
-    console.log(x)
+<ol>
+<li><code>number</code></li>
+</ol>
+<ul>
+<li>整数和小数：<code>1</code> <code>0.1</code> <code>.1</code></li>
+<li>科学计数法: <code>1.23e2</code></li>
+<li>二进制: <code>0b11</code></li>
+<li>八进制: <code>011</code>(后来ES5添加了<code>0o11</code>语法)</li>
+<li>十六进制: <code>0x11</code></li>
+</ul>
+<ol start="2">
+<li><code>string</code></li>
+</ol>
+<ul>
+<li>空字符串: <code>&#39;&#39;</code> <code>&quot;&quot;</code> length为0</li>
+<li>空格字符串: <code>&#39; &#39;</code> <code>&quot; &quot;</code> length为1</li>
+<li><p>多行字符串</p>
+<pre><code>var a = &apos;12345&apos; + 
+        &apos;67890&apos;  //无回车符号
+var a = `12345
+67890`           //含回车符号
+var a = &apos;12345 \
+67890&apos;           //不推荐使用，若反斜杠后有空格则报错。
+</code></pre></li>
+</ul>
+<ol start="3">
+<li><code>boolean</code></li>
+</ol>
+<ul>
+<li>乔治·布尔<br>乔治·布尔是英格兰数学家和哲学家、数理逻辑学先驱。<br>由于其在符号逻辑运算中的特殊贡献，很多计算机语言中将逻辑运算称为布尔运算，将其结果称为布尔值。</li>
+<li><code>boolean</code>的取值<br>只有两个值：<code>true</code> <code>false</code><br><code>a&amp;&amp;b</code>即在a和b都为true时，取值为true,否则均取值为false（与门）<br><code>a||b</code>即在a和b都为false时，取值为false,否则均为true（或门）</li>
+</ul>
+<ol start="4">
+<li><code>Symbol</code><br>Symbol生成一个全局唯一的值</li>
+<li><code>undefined</code>和<code>null</code>  </li>
+</ol>
+<ul>
+<li>都表示没有值。一般来说<code>null</code>表示空对象，<code>undefined</code>表示空字符串/数值/布尔值/Symbol。</li>
+<li>(规范)如果一个变量没有被赋值，那么这个变量的值就是<code>undefined</code></li>
+<li>(惯例)如果你想表示一个还没有被赋值的对象，就用<code>null</code>。<br><code>var obj = null</code> </li>
+<li>(惯例)如果你想表示一个还没有被赋值的字符串/数值/布尔值/Symbol,就用<code>undefined</code>。<br><code>var xxx = undefined</code>实际上只需要<code>var xxx</code></li>
+</ul>
+<ol start="6">
+<li><code>object</code></li>
+</ol>
+<ul>
+<li><code>object</code>就是上面几种基本类型(无序的)组合在一起</li>
+<li><code>object</code>的key一律是字符串，不存在其他类型的key</li>
+<li><p><code>object</code>里面可以有<code>object</code>  </p>
+<pre><code>var person = {
+    name: &apos;Lilei&apos;,
+    &apos;child&apos;:{
+        name: &apos;Jack&apos;
+    }, // 最后这个逗号可有可无
 }
-</code></pre><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
-<li><code>clientX</code>当前坐标系下鼠标指针的X轴。</li>
-<li><code>clientY</code>当前坐标系下鼠标指针的Y轴。</li>
-<li><code>button</code>点击事件对应的按键序号：0为左键、1为中键、2为右键。<h3 id="触摸事件"><a href="#触摸事件" class="headerlink" title="触摸事件"></a>触摸事件</h3><code>touchEvent</code>是一类描述手指在触摸平面（触摸屏、触摸板等）的状态变化的事件。这类事件用于描述一个或多个触点，使开发者可以检测触点的移动，触点的增加和减少，等等。<h4 id="触摸事件的类型"><a href="#触摸事件的类型" class="headerlink" title="触摸事件的类型"></a>触摸事件的类型</h4></li>
-<li><code>touchstart</code>当用户在触摸平面上放置了一个触点时触发。</li>
-<li><code>touchmove</code>当用户在触摸平面上移动触点时触发。</li>
-<li><code>touchend</code>当一个触点被用户从触摸平面上移除（当用户将一个手指离开触摸平面）时触发。</li>
+</code></pre></li>
+<li><p><code>object[&#39;&#39;]</code>是合法的</p>
+</li>
+<li>如果key符合标识符条件的话<code>object[&#39;key&#39;]</code>可以写作<code>object.key</code>  ,注意<code>object.key</code>不同于<code>object[key]</code></li>
+<li><code>delete object[&#39;key&#39;]</code>(同时删除<code>key</code>和<code>value</code>)</li>
+<li><code>&#39;key&#39; in object</code>检测’key’是否在object里面，返回一个布尔值(即使键值为undefined)</li>
 </ul>
-<h4 id="监听touch事件"><a href="#监听touch事件" class="headerlink" title="监听touch事件"></a>监听touch事件</h4><pre><code>div.ontouchstart = function(x){
-    console.log(x)
-}
-</code></pre><h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ul>
-<li><code>touches</code>(多点触控): 一 个TouchList对象，包含了所有当前接触触摸平面的触点的 Touch 对象，无论它们的起始于哪个 element 上，也无论它们状态是否发生了变化</li>
-<li><code>touchlist</code>: 一个 TouchList 代表一个触摸平面上所有触点的列表; 举例来讲, 如果一个用户用三根手指接触屏幕(或者触控板), 与之相关的TouchList 对于每根手指都会生成一个 Touch 对象, 共计三个</li>
-</ul>
-<h4 id="如何检测网页运行在电脑上还是手机"><a href="#如何检测网页运行在电脑上还是手机" class="headerlink" title="如何检测网页运行在电脑上还是手机"></a>如何检测网页运行在电脑上还是手机</h4><p><strong><code>in</code>运算符</strong> : 如果指定的属性在指定的对象或其原型链中，则<code>in</code>运算符返回<code>true</code></p>
-<pre><code>var hash = {a:1,b:2,c:3}
-&apos;a&apos; in hash  // 返回true
-&apos;b&apos; in hash  // 返回true
-&apos;d&apos; in hash  // 返回false
-</code></pre><p>我们可以利用<code>in</code>操作符来判断电脑还是手机</p>
-<pre><code>&apos;ontouchstart&apos; in document.body  // 如果在手机上则返回true,在电脑上则返回false
-// 换一种方式
-document.body.ontouchstart === undefined // 如果在手机上返回true,在电脑则返回false
-</code></pre><p>这种检测方式叫做<strong>特性检测</strong>，检测的是特性不是设备</p>
-<p><code>viewport</code>由于移动端的手机默认会缩放，所以我们需要加上一个<code>viewport</code>的mata标签使它不缩放，以一比一的比例显示我的页面内容。完整代码：<code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code></p>
+<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h4><table>
+<thead>
+<tr>
+<th>xxx的类型</th>
+<th>string</th>
+<th>number</th>
+<th>boolean</th>
+<th>symbol</th>
+<th>undefined</th>
+<th>null</th>
+<th>object</th>
+<th style="text-align:center">function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeof xxx</td>
+<td>‘string’</td>
+<td>‘number’</td>
+<td>‘boolean’</td>
+<td>‘symbol’</td>
+<td>‘undefined’</td>
+<td><strong>‘object’</strong></td>
+<td>‘object’</td>
+<td style="text-align:center"><strong>‘function’</strong></td>
+</tr>
+</tbody>
+</table>
+<p>注意：<strong>function</strong>并不是一个类型</p>
 
       
     </div>
@@ -359,8 +428,8 @@ document.body.ontouchstart === undefined // 如果在手机上返回true,在电�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/29/冒泡排序和选择排序流程图/" rel="next" title="冒泡排序和选择排序流程图">
-                <i class="fa fa-chevron-left"></i> 冒泡排序和选择排序流程图
+              <a href="/2018/08/31/监听鼠标事件/" rel="next" title="监听鼠标事件">
+                <i class="fa fa-chevron-left"></i> 监听鼠标事件
               </a>
             
           </div>
@@ -368,10 +437,6 @@ document.body.ontouchstart === undefined // 如果在手机上返回true,在电�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/31/JS数据类型/" rel="prev" title="JS数据类型">
-                JS数据类型 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -485,7 +550,7 @@ document.body.ontouchstart === undefined // 如果在手机上返回true,在电�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标事件"><span class="nav-number">1.</span> <span class="nav-text">鼠标事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#监听鼠标事件"><span class="nav-number">1.1.</span> <span class="nav-text">监听鼠标事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.2.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#触摸事件"><span class="nav-number">2.</span> <span class="nav-text">触摸事件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#触摸事件的类型"><span class="nav-number">2.1.</span> <span class="nav-text">触摸事件的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听touch事件"><span class="nav-number">2.2.</span> <span class="nav-text">监听touch事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">2.3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何检测网页运行在电脑上还是手机"><span class="nav-number">2.4.</span> <span class="nav-text">如何检测网页运行在电脑上还是手机</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS历史"><span class="nav-number">1.</span> <span class="nav-text">JS历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据类型"><span class="nav-number">2.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof运算符"><span class="nav-number">3.</span> <span class="nav-text">typeof运算符</span></a></li></ol></div>
             
 
           </div>
