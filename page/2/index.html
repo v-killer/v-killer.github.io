@@ -229,6 +229,182 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/初识HTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/26/初识HTTP/" itemprop="url">初识HTTP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T17:20:19+08:00">
+                2018-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p><strong>HTTP</strong>全称 <em>HyperText Transfer Protocol</em> <strong>即超文本传输协议</strong><br>是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。</p>
+<p><strong>HTML</strong> 全称：<em>HyperText Markup Language</em> 即<strong>超文本标记语言</strong><br>是一种用于创建网页的标准标记语言。</p>
+<p><strong>URI</strong> 全称：<em>Uniform Resource Identifier</em>即<strong>统一资源标识符</strong></p>
+<p><strong>URI</strong>分为<strong>URL</strong>和<strong>URN</strong> 我们一般使用URL作为<strong>网址</strong></p>
+<p><strong>URN</strong>全称：<em>Uniform Resource Name</em> 即<strong>统一资源名称</strong><br>通过<strong>URN</strong>可以确定一个【唯一的】资源</p>
+<p><strong>URL</strong> 全称：<em>Uniform Resource Locator</em> 即<strong>统一资源定位符</strong><br>通过<strong>URL</strong>可以确定一个【唯一的】地址（网址）</p>
+<p>例如：<code>https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5</code> 就是一个 URL</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/23/1638c9eb2da7c13b?w=2298&amp;h=878&amp;f=png&amp;s=418072" alt=""></p>
+<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>以<code>www.baidu.com</code>为例</p>
+<ul>
+<li><code>.com</code>或<code>.cn</code>或<code>.tt</code> 为一级域名（顶级域名）。</li>
+<li><code>baidu.com</code>为二级域名。</li>
+<li><code>www.baidu.com</code>为三级域名。</li>
+<li><code>www.baidu.com</code>和<code>baidu.com</code>共有一个二级域名。</li>
+</ul>
+<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><p><strong>DNS</strong> 全称 <em>Domain Name System</em> 即<strong>网域名称系统</strong>。<br>它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。<strong>DNS</strong>使用<strong>TCP</strong>和<strong>UDP端口53</strong><br><strong>DNS</strong>会根据一个域名返回一个<strong>IP</strong><br>在本地设置hosts可以绕过<strong>DNS</strong>。使用命令<code>sudo vi /etc/hosts</code>设置。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/5/23/1638c9f5539c888f?w=1548&amp;h=720&amp;f=png&amp;s=291242" alt=""></p>
+<ul>
+<li>每一个电脑都有很多端口，每一个端口只做一件事情。从0到2048都是指定做某事情。80端口是用来服务HTTP协议的。</li>
+<li>浏览器负责发起请求</li>
+<li>服务器在80端口接受请求</li>
+<li>服务器负责返回内容</li>
+<li>浏览器负责下载相应内容</li>
+<li>HTTP的作用是指导浏览器和服务器如何进行沟通</li>
+</ul>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>一个HTTP请求报文由请求行、请求头部、空行和请求数据4个部分组成<br>请求的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</li>
+<li>第三部分永远都是一个回车（\n）</li>
+<li>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等</li>
+<li>这里的路径包括「查询参数」，但不包括「锚点」</li>
+<li>如果你没有写路径，那么路径默认为 /</li>
+<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
+</ol>
+<h4 id="用Chrome查看请求"><a href="#用Chrome查看请求" class="headerlink" title="用Chrome查看请求"></a>用Chrome查看请求</h4><ol>
+<li>在谷歌浏览器空白处单击右键，点击检查，打开<code>Network</code></li>
+<li>地址栏输入网址</li>
+<li>选中第一个请求</li>
+<li>查看<code>Request Headers</code>，点击<code>view source</code>将会看到请求的前两部分</li>
+<li>查看<code>FormData</code>或<code>Payload</code>将会看到请求的第四部分（如果有的话）</li>
+</ol>
+<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><p>HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行、响应正文。<br>响应的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure></p>
+<p>响应示例<br>状态码是服务器对浏览器说的话</p>
+<ul>
+<li>1xx：指示信息–表示请求已接收，继续处理。</li>
+<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
+<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
+<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
+<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
+</ul>
+<h4 id="用Chrome查看响应"><a href="#用Chrome查看响应" class="headerlink" title="用Chrome查看响应"></a>用Chrome查看响应</h4><ol>
+<li>打开<code>Network</code></li>
+<li>输入网址</li>
+<li>选中第一个响应</li>
+<li>查看<code>Response Headers</code>，点击<code>view source</code>将会看到响应的前两部分</li>
+<li>查看<code>Response</code>或者<code>Preview</code>将会看到响应的第四部分。<h3 id="CURL"><a href="#CURL" class="headerlink" title="CURL"></a>CURL</h3>在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。更多用法可以参考这篇<a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">网站</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/初识命令行/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -468,7 +644,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
