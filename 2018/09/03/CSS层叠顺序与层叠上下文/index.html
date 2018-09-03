@@ -79,20 +79,19 @@
 
 
 
-<meta name="description" content="左右布局使用浮动即可实现左右布局 左侧定宽右侧自适应 html代码 &amp;lt;body&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; css代码 .left{     background">
+<meta name="description" content="层叠顺序 层叠顺序(stacking order): 表示元素发生层叠时候有着特定的垂直显示顺序。  background border 块级元素 浮动元素 文字/内联元素 z-index: 0 z-index: 1   后来居上：当层叠顺序相同的时候，后面的元素会覆盖前面的元素。   在层叠上下文中，负z-index在border和块级元素之间。层叠上下文   层叠上下文是HTML元素的三维概念">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS布局">
-<meta property="og:url" content="http://yoursite.com/2018/08/29/CSS布局/index.html">
+<meta property="og:title" content="CSS层叠顺序与层叠上下文">
+<meta property="og:url" content="http://yoursite.com/2018/09/03/CSS层叠顺序与层叠上下文/index.html">
 <meta property="og:site_name" content="Study Notes">
-<meta property="og:description" content="左右布局使用浮动即可实现左右布局 左侧定宽右侧自适应 html代码 &amp;lt;body&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; css代码 .left{     background">
+<meta property="og:description" content="层叠顺序 层叠顺序(stacking order): 表示元素发生层叠时候有着特定的垂直显示顺序。  background border 块级元素 浮动元素 文字/内联元素 z-index: 0 z-index: 1   后来居上：当层叠顺序相同的时候，后面的元素会覆盖前面的元素。   在层叠上下文中，负z-index在border和块级元素之间。层叠上下文   层叠上下文是HTML元素的三维概念">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e5536e5655d2c?w=893&h=507&f=png&s=4593">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e56192b15bd26?w=985&h=510&f=png&s=8827">
-<meta property="og:updated_time" content="2018-08-29T06:53:34.210Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/6/1650e7ca4e761771?w=1192&h=742&f=png&s=278520">
+<meta property="og:updated_time" content="2018-09-03T10:08:25.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS布局">
-<meta name="twitter:description" content="左右布局使用浮动即可实现左右布局 左侧定宽右侧自适应 html代码 &amp;lt;body&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; css代码 .left{     background">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e5536e5655d2c?w=893&h=507&f=png&s=4593">
+<meta name="twitter:title" content="CSS层叠顺序与层叠上下文">
+<meta name="twitter:description" content="层叠顺序 层叠顺序(stacking order): 表示元素发生层叠时候有着特定的垂直显示顺序。  background border 块级元素 浮动元素 文字/内联元素 z-index: 0 z-index: 1   后来居上：当层叠顺序相同的时候，后面的元素会覆盖前面的元素。   在层叠上下文中，负z-index在border和块级元素之间。层叠上下文   层叠上下文是HTML元素的三维概念">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/6/1650e7ca4e761771?w=1192&h=742&f=png&s=278520">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/29/CSS布局/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/03/CSS层叠顺序与层叠上下文/"/>
 
 
 
 
 
-  <title>CSS布局 | Study Notes</title>
+  <title>CSS层叠顺序与层叠上下文 | Study Notes</title>
   
 
 
@@ -235,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/CSS布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/CSS层叠顺序与层叠上下文/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -252,7 +251,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS布局</h1>
+          <h1 class="post-title" itemprop="name headline">CSS层叠顺序与层叠上下文</h1>
         
 
         <div class="post-meta">
@@ -264,8 +263,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T14:53:16+08:00">
-                2018-08-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T18:08:07+08:00">
+                2018-09-03
               </time>
             
 
@@ -302,53 +301,29 @@
       
 
       
-        <h3 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h3><p>使用浮动即可实现左右布局</p>
-<p>左侧定宽右侧自适应</p>
-<p>html代码</p>
-<pre><code>&lt;body&gt;
-    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>css代码</p>
-<pre><code>.left{
-    background: red;
-    height: 500px;
-    width: 300px;
-    float: left;
-}
-.right{
-    background: green;
-    height: 500px;
-    margin-left: 300px;
-}
-</code></pre><p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e5536e5655d2c?w=893&amp;h=507&amp;f=png&amp;s=4593" alt=""></p>
-<h4 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h4><p>使用浮动即可实现左中右布局</p>
-<p>左侧定宽，右侧定宽，中间自适应</p>
-<p>html代码</p>
-<pre><code>&lt;body&gt;
-    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
-    &lt;div class=&quot;middle&quot;&gt;middle&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>css代码</p>
-<pre><code>.left{
-    background: red;
-    height: 500px;
-    width: 300px;
-    float: left;
-}
-.right{
-    background: green;
-    height: 500px;
-    float: right;
-    width: 300px;
-}
-.middle{
-    background: yellow;
-    margin: 0 300px;
-    height: 500px;
-}
-</code></pre><p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e56192b15bd26?w=985&amp;h=510&amp;f=png&amp;s=8827" alt="">  </p>
+        <h3 id="层叠顺序"><a href="#层叠顺序" class="headerlink" title="层叠顺序"></a>层叠顺序</h3><hr>
+<p>层叠顺序(stacking order): 表示元素发生层叠时候有着特定的垂直显示顺序。<br><img src="https://user-gold-cdn.xitu.io/2018/8/6/1650e7ca4e761771?w=1192&amp;h=742&amp;f=png&amp;s=278520" alt=""></p>
+<ol>
+<li>background</li>
+<li>border</li>
+<li>块级元素</li>
+<li>浮动元素</li>
+<li>文字/内联元素</li>
+<li>z-index: 0</li>
+<li>z-index: 1</li>
+</ol>
+<ul>
+<li>后来居上：当层叠顺序相同的时候，后面的元素会覆盖前面的元素。  </li>
+<li>在层叠上下文中，<code>负z-index</code>在border和块级元素之间。<h3 id="层叠上下文"><a href="#层叠上下文" class="headerlink" title="层叠上下文"></a>层叠上下文</h3></li>
+</ul>
+<hr>
+<p>层叠上下文是HTML元素的三维概念，这些HTML元素在一条假想的相对于面向（电脑屏幕的）视窗或者网页的用户的z轴上延伸，HTML元素依据其自身属性按照优先级顺序占用层叠上下文的空间。<br>文档中的层叠上下文由满足以下任意一个条件的元素形成：</p>
+<ul>
+<li>根元素(HTML)</li>
+<li>z-index值不为auto的绝对/相对定位</li>
+<li><code>opacity</code>属性小于1的元素。(透明度小于1)</li>
+<li><code>position: fixed;</code><br>更多条件请参考<a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Understanding_z_index/The_stacking_context" target="_blank" rel="noopener">MDN层叠上下文</a></li>
+</ul>
 
       
     </div>
@@ -373,8 +348,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/28/CSS居中/" rel="next" title="CSS居中">
-                <i class="fa fa-chevron-left"></i> CSS居中
+              <a href="/2018/09/03/CSS盒模型详解/" rel="next" title="CSS盒模型详解">
+                <i class="fa fa-chevron-left"></i> CSS盒模型详解
               </a>
             
           </div>
@@ -382,10 +357,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/29/冒泡排序和选择排序流程图/" rel="prev" title="冒泡排序和选择排序流程图">
-                冒泡排序和选择排序流程图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,7 +470,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局"><span class="nav-number">1.</span> <span class="nav-text">左右布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#左中右布局"><span class="nav-number">1.1.</span> <span class="nav-text">左中右布局</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#层叠顺序"><span class="nav-number">1.</span> <span class="nav-text">层叠顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层叠上下文"><span class="nav-number">2.</span> <span class="nav-text">层叠上下文</span></a></li></ol></div>
             
 
           </div>
