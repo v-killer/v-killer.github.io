@@ -229,6 +229,210 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/CSS盒模型详解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/CSS盒模型详解/" itemprop="url">CSS盒模型详解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-03T18:06:59+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><hr>
+<p>盒模型(框模型)是网页布局的基础，每个元素都被表示为一个矩形的方框。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/1650982825a61d9e?w=967&amp;h=720&amp;f=png&amp;s=9673" alt=""></p>
+<ul>
+<li><p><code>width</code>和<code>height</code>设置内容框(content box)的宽度和高度。</p>
+<blockquote>
+<p>使用<code>min-width</code>、<code>min-height</code>、<code>max-width</code>、<code>max-height</code>可以设置最大(小)宽度和高度,优点是当页面放大或缩小时，内容框会自动适应页面。</p>
+</blockquote>
+</li>
+<li><p><code>padding</code>表示css框的内边距。</p>
+</li>
+<li><code>border</code>表示css框的边界,也就是边框。<code>border-width</code>、<code>border-color</code>分别设置边框的厚度和颜色。</li>
+<li><code>margin</code>表示css框的外边距。<h3 id="外边距合并-折叠"><a href="#外边距合并-折叠" class="headerlink" title="外边距合并(折叠)"></a>外边距合并(折叠)</h3>块级元素的上外边距和下外边距有时会合并(折叠)为一个外边距，其大小取其中最大者。</li>
+<li>相邻元素之间：毗邻的两个元素之间的外边距会合并。  </li>
+<li>父元素与其第一个或最后一个子元素之间:如果父元素与其第一个(最后一个)子元素之间不存在边框，内边距，行内内容，那么这两对外边距之间会产生合并，此时子元素的外边距会”溢出”到父元素的外面。  </li>
+<li>空的块级元素：如果一个块级元素内不包含任何内容，则该元素的上下外边距会合并。<blockquote>
+<p>使用<code>overflow: hidden;</code>可以避免外边距合并，但是不建议这样做。建议加padding。</p>
+</blockquote>
+<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h3><code>box-sizing</code>属性用于更改用于计算元素宽度和高度的默认的CSS盒子模型。</li>
+<li><code>content-box</code>:默认值，标准盒模型。width和height只包括内容的宽高。<br>width/height = 内容的宽度/高度</li>
+<li><code>border-box</code>:IE盒模型。width和height包括内容、内边距和边框。(如果想要使一个框占窗口的50%可以使用<code>border-box</code>)<br>width/height = border + padding + 内容的宽度/高度</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/165099c69a923a3c?w=967&amp;h=719&amp;f=png&amp;s=9653" alt=""></p>
+<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><hr>
+<p><code>display</code>属性指定用于元素的呈现框的类型</p>
+<ul>
+<li><code>block</code>(块框):定义为堆放在其他框上的框（例如：其内容会独占一行），可以设置它的宽高。</li>
+<li><code>inline</code>(行内框):与块框是相反的，它随着文档的文字（例如：它将会和周围的文字和其他行内元素出现在同一行，而且它的内容会像一段中的文字一样随着文字部分的流动而打乱），对行内盒设置宽高无效。</li>
+<li><code>inline-block</code>(行内块状框):像是上述两种的集合：它不会重新另起一行但会像行内框一样随着周围文字而流动，它能够设置宽高，并且像块框一样保持了其块特性的完整性，它不会在段落行中断开。（在下面的示例中，行内块状框会放在第二行文本上，因为第一行没有足够的空间，并且不会突破两行。然而，如果没有足够的空间，行内框会在多条线上断裂，而它会失去一个框的形状。）</li>
+</ul>
+<h3 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h3><hr>
+<p><strong>overflow</strong>:当你使用绝对的值设置了一个框的大小（如，固定像素的宽/高），允许的大小可能不适合放置内容，这种情况下内容会从盒子溢流。我们使用<code>overflow</code>属性来控制这种情况的发生。</p>
+<ul>
+<li><code>auto</code>：当内容过多，溢流的内容被隐藏，然后出现滚动条来让我们滚动查看所有的内容。</li>
+<li><code>hidden</code>:当内容过多，溢流的内容被隐藏。</li>
+<li><code>visible</code>:默认值，当内容过多，溢流的内容被显示在盒子的外边。</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/16509a51ed00a7e8?w=675&amp;h=402&amp;f=png&amp;s=26076" alt=""></p>
+<h3 id="文字溢出省略"><a href="#文字溢出省略" class="headerlink" title="文字溢出省略"></a>文字溢出省略</h3><ul>
+<li><p>单行文字<br><code>white-space: nowrap</code>:文本内的换行符无效(使文字显示在一行)  </p>
+<pre><code>text-overflow: ellipsis:   //多出的文本变为省略号
+overflow: hidden;
+</code></pre></li>
+<li><p>多行文字</p>
+<pre><code>div{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;//第几行省略
+    -webkit-box-orient: vertical;
+}
+</code></pre></li>
+</ul>
+<h3 id="文字两端对齐"><a href="#文字两端对齐" class="headerlink" title="文字两端对齐"></a>文字两端对齐</h3><p>如果想要使[姓名]和[联系方式]两端对齐，呈现这样的效果:</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/16509d73c05fc08d?w=336&amp;h=99&amp;f=png&amp;s=1583" alt=""><br>代码如下：    </p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+  &lt;style&gt;
+    span{
+      display: inline-block;
+      width: 4em;
+      text-align: justify;
+    }
+    span::after{
+      content: &apos;&apos;;
+      display: inline-block;
+      width: 100%;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div&gt;
+    &lt;span&gt;姓名&lt;/span&gt;&lt;br/&gt;
+    &lt;span&gt;联系方式&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><hr>
+<p>文档流：文档内元素流动的方向。</p>
+<ul>
+<li>内联元素从左向右流动，如果遇到阻碍(宽度不够)，则换行继续流动。</li>
+<li>如果一个英文单词很长，那么它不会换行，使用<code>word-break: break-all</code>可使其换行。(或者使用连字符<code>-</code>)</li>
+<li>块级元素每一个元素都占据一行，从上向下流动。如下图所示：<br><img src="https://user-gold-cdn.xitu.io/2018/8/5/1650a2e91a341891?w=1727&amp;h=657&amp;f=png&amp;s=252910" alt=""></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/JS对象/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1835,158 +2039,6 @@ align-items: center;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/初识HTML/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/27/初识HTML/" itemprop="url">初识HTML</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-27T15:11:19+08:00">
-                2018-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="w3c"><a href="#w3c" class="headerlink" title="w3c"></a>w3c</h2><p>万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织,<br>由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。</p>
-<h3 id="李爵士"><a href="#李爵士" class="headerlink" title="李爵士"></a>李爵士</h3><p>蒂莫西·约翰·伯纳斯-李爵士英语：Sir Timothy John Berners-Lee，英国计算机科学家。他是万维网的发明者。1990年12月25日，他成功利用互联网实现了HTTP客户端与服务器的第一次通讯。</p>
-<h3 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><p>MDN Web Docs是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。</p>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><ol>
-<li><h4 id="HTML的版本（W3C组织制定规范）"><a href="#HTML的版本（W3C组织制定规范）" class="headerlink" title="HTML的版本（W3C组织制定规范）"></a>HTML的版本（W3C组织制定规范）</h4><p> ①.HTML4.01</p>
-<p> ②.XHTML</p>
-<p> ③.HTML5</p>
-<p> ④HTML5.1</p>
-</li>
-<li><h4 id="规范文档-Specifications"><a href="#规范文档-Specifications" class="headerlink" title="规范文档(Specifications)"></a>规范文档(Specifications)</h4><p> ①.由W3C写文档（李爵士）</p>
-<p> ②.W3C根据浏览器的实际情况总结文档，并不是凭空想象</p>
-</li>
-<li><h4 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h4><p> ①.用来选择文档类型</p>
-<p> ②.除了HTML5的DOCTYPE，其他的都很难记：<a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html" target="_blank" rel="noopener">查看其他的DOTCYPE</a></p>
-<p> ③.如果你没写DOCTYPE,那你就惨了</p>
-</li>
-<li><h4 id="省略标签"><a href="#省略标签" class="headerlink" title="省略标签"></a>省略标签</h4><p> ①head、body、html标签可省略（如果标签为空）</p>
-<p> ②浏览器会自动补上省略的标签</p>
-</li>
-<li><h4 id="如何查看MDN文档"><a href="#如何查看MDN文档" class="headerlink" title="如何查看MDN文档"></a>如何查看MDN文档</h4><p> ①Googel：关键词+MDN</p>
-<p> ②切换成中文</p>
-</li>
-<li><h4 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h4><p> 一个空元素（empty element）可能是 HTML，SVG，或者 MathML 里的一个不可能存在子节点（例如内嵌的元素或者元素内的文本）的element。</p>
-<p> 在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。</p>
-<p> 在 HTML 中有以下这些空元素：<code>&lt;area&gt;</code> <code>&lt;base&gt;</code> <code>&lt;br&gt;</code> <code>&lt;col&gt;</code> <code>&lt;command&gt;</code> <code>&lt;embed&gt;</code> <code>&lt;hr&gt;</code> <code>&lt;img&gt;</code> <code>&lt;input&gt;</code> <code>&lt;keygen&gt;</code> <code>&lt;link&gt;</code> <code>&lt;meta&gt;</code> <code>&lt;param&gt;</code> <code>&lt;source&gt;</code> <code>&lt;track&gt;</code> <code>&lt;wbr&gt;</code></p>
-</li>
-<li><h4 id="可替换元素"><a href="#可替换元素" class="headerlink" title="可替换元素"></a>可替换元素</h4><p> CSS 里，可替换元素（replaced element）的展现不是由CSS来控制的。这些元素是一类 外观渲染独立于CSS的 外部对象。<br> 典型的可替换元素有 <code>&lt;img&gt;</code>、 <code>&lt;object&gt;</code>、 <code>&lt;video&gt;</code> 和 表单元素，如<code>&lt;textarea&gt;</code>、 <code>&lt;input&gt;</code> 。 </p>
-<p> 某些元素只在一些特殊情况下表现为可替换元素，例如 <code>&lt;audio&gt;</code> 和 <code>&lt;canvas&gt;</code> 。 通过 CSS content 属性来插入的对象 被称作 匿名可替换元素（anonymous replaced elements）。</p>
-<p> CSS在某些情况下会对可替换元素做特殊处理，比如计算外边距和一些auto值。</p>
-<p> 需要注意的是，一部分（并非全部）可替换元素，本身具有尺寸和基线（baseline），会被像vertical-align之类的一些 CSS 属性用到。</p>
-</li>
-<li>命令 <code>whois</code> 可以查看某个域名拥有者的身份</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2037,7 +2089,7 @@ align-items: center;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
