@@ -79,20 +79,24 @@
 
 
 
-<meta name="description" content="左右布局使用浮动即可实现左右布局 左侧定宽右侧自适应 html代码 &amp;lt;body&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; css代码 .left{     background">
+<meta name="description" content="DOM是啥？ MDN是这样解释的:  文档对象模型 (DOM) 是HTML和XML文档的编程接口。它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构，样式和内容。DOM将文档解析为一个由节点(node)和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将web页面和脚本或程序语言连接起来。  OK,翻译成人话就是，本来我们是不能用JS操作htm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS布局">
-<meta property="og:url" content="http://yoursite.com/2018/08/29/CSS布局/index.html">
+<meta property="og:title" content="DOM解析">
+<meta property="og:url" content="http://yoursite.com/2018/09/04/DOM解析/index.html">
 <meta property="og:site_name" content="Study Notes">
-<meta property="og:description" content="左右布局使用浮动即可实现左右布局 左侧定宽右侧自适应 html代码 &amp;lt;body&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; css代码 .left{     background">
+<meta property="og:description" content="DOM是啥？ MDN是这样解释的:  文档对象模型 (DOM) 是HTML和XML文档的编程接口。它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构，样式和内容。DOM将文档解析为一个由节点(node)和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将web页面和脚本或程序语言连接起来。  OK,翻译成人话就是，本来我们是不能用JS操作htm">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e5536e5655d2c?w=893&h=507&f=png&s=4593">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e56192b15bd26?w=985&h=510&f=png&s=8827">
-<meta property="og:updated_time" content="2018-08-29T06:53:34.210Z">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/25/16571a363c14f586?w=486&h=266&f=gif&s=3238">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/26/1657567b6f226a7d?w=450&h=463&f=png&s=15136">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/26/16575683b140c0d8?w=450&h=186&f=png&s=4813">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/26/1657568c2f7cfa99?w=450&h=159&f=png&s=5835">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/26/1657569505d1d8be?w=450&h=413&f=png&s=18536">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/26/165756c8a553154d?w=496&h=858&f=png&s=22168">
+<meta property="og:updated_time" content="2018-09-04T06:48:49.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS布局">
-<meta name="twitter:description" content="左右布局使用浮动即可实现左右布局 左侧定宽右侧自适应 html代码 &amp;lt;body&amp;gt;     &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;left&amp;lt;/div&amp;gt;     &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;right&amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; css代码 .left{     background">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/10/163e5536e5655d2c?w=893&h=507&f=png&s=4593">
+<meta name="twitter:title" content="DOM解析">
+<meta name="twitter:description" content="DOM是啥？ MDN是这样解释的:  文档对象模型 (DOM) 是HTML和XML文档的编程接口。它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构，样式和内容。DOM将文档解析为一个由节点(node)和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将web页面和脚本或程序语言连接起来。  OK,翻译成人话就是，本来我们是不能用JS操作htm">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/25/16571a363c14f586?w=486&h=266&f=gif&s=3238">
 
 
 
@@ -122,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/29/CSS布局/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/04/DOM解析/"/>
 
 
 
 
 
-  <title>CSS布局 | Study Notes</title>
+  <title>DOM解析 | Study Notes</title>
   
 
 
@@ -235,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/CSS布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/DOM解析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -252,7 +256,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS布局</h1>
+          <h1 class="post-title" itemprop="name headline">DOM解析</h1>
         
 
         <div class="post-meta">
@@ -264,8 +268,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T14:53:16+08:00">
-                2018-08-29
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-04T14:48:29+08:00">
+                2018-09-04
               </time>
             
 
@@ -302,53 +306,89 @@
       
 
       
-        <h3 id="左右布局"><a href="#左右布局" class="headerlink" title="左右布局"></a>左右布局</h3><p>使用浮动即可实现左右布局</p>
-<p>左侧定宽右侧自适应</p>
-<p>html代码</p>
-<pre><code>&lt;body&gt;
-    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>css代码</p>
-<pre><code>.left{
-    background: red;
-    height: 500px;
-    width: 300px;
-    float: left;
-}
-.right{
-    background: green;
-    height: 500px;
-    margin-left: 300px;
-}
-</code></pre><p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e5536e5655d2c?w=893&amp;h=507&amp;f=png&amp;s=4593" alt=""></p>
-<h4 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h4><p>使用浮动即可实现左中右布局</p>
-<p>左侧定宽，右侧定宽，中间自适应</p>
-<p>html代码</p>
-<pre><code>&lt;body&gt;
-    &lt;div class=&quot;left&quot;&gt;left&lt;/div&gt;
-    &lt;div class=&quot;right&quot;&gt;right&lt;/div&gt;
-    &lt;div class=&quot;middle&quot;&gt;middle&lt;/div&gt;
-&lt;/body&gt;
-</code></pre><p>css代码</p>
-<pre><code>.left{
-    background: red;
-    height: 500px;
-    width: 300px;
-    float: left;
-}
-.right{
-    background: green;
-    height: 500px;
-    float: right;
-    width: 300px;
-}
-.middle{
-    background: yellow;
-    margin: 0 300px;
-    height: 500px;
-}
-</code></pre><p><img src="https://user-gold-cdn.xitu.io/2018/6/10/163e56192b15bd26?w=985&amp;h=510&amp;f=png&amp;s=8827" alt="">  </p>
+        <h3 id="DOM是啥？"><a href="#DOM是啥？" class="headerlink" title="DOM是啥？"></a>DOM是啥？</h3><hr>
+<p>MDN是这样解释的:</p>
+<blockquote>
+<p>文档对象模型 (DOM) 是HTML和XML文档的编程接口。它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构，样式和内容。DOM将文档解析为一个由节点(node)和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将web页面和脚本或程序语言连接起来。</p>
+</blockquote>
+<p>OK,翻译成人话就是，本来我们是不能用JS操作html页面的，因为页面只是文本，浏览器将html页面变成DOM，内容没有变，形式变成了对象,我们就可以用JS操作他了。web页面和DOM是一个东西，但是表现形式不同。就像水和冰，一个是文档一个是文档对象模型(DOM)。  </p>
+<h3 id="DOM都有啥？"><a href="#DOM都有啥？" class="headerlink" title="DOM都有啥？"></a>DOM都有啥？</h3><hr>
+<p>web页面被浏览器解析成了这样(DOM树)：<br><img src="https://user-gold-cdn.xitu.io/2018/8/25/16571a363c14f586?w=486&amp;h=266&amp;f=gif&amp;s=3238" alt=""><br>图中的每一个方框就是一个节点(node)，我们的html文档有文字，标签，注释等等，所以节点(node)也分成了不同的类型。<br>下面是一些常用类型和他们的属性</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>nodeType</th>
+<th>nodeName</th>
+<th>nodeValuie</th>
+<th>parentNode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Element</td>
+<td>1</td>
+<td>元素标签名</td>
+<td>null</td>
+<td>Document或Element</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>3</td>
+<td>#text</td>
+<td>文本内容</td>
+<td>Element</td>
+</tr>
+<tr>
+<td>Attr</td>
+<td>2</td>
+<td>特性的名称</td>
+<td>特性的值</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Comment</td>
+<td>8</td>
+<td>#comment</td>
+<td>注释的内容</td>
+<td>Document或Element</td>
+</tr>
+<tr>
+<td>Document</td>
+<td>9</td>
+<td>#document</td>
+<td>null</td>
+<td>null</td>
+</tr>
+<tr>
+<td>DocumentFragment</td>
+<td>11</td>
+<td>#document-fragment</td>
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DOM能干啥？"><a href="#DOM能干啥？" class="headerlink" title="DOM能干啥？"></a>DOM能干啥？</h3><hr>
+<p>我们使用API来操作DOM，改变文档的结构、样式和内容。所谓操作无外乎增删改查。</p>
+<ol>
+<li><strong>增</strong></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/1657567b6f226a7d?w=450&amp;h=463&amp;f=png&amp;s=15136" alt=""></p>
+<ol start="2">
+<li><strong>删</strong></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/16575683b140c0d8?w=450&amp;h=186&amp;f=png&amp;s=4813" alt=""></p>
+<ol start="3">
+<li><strong>改</strong></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/1657568c2f7cfa99?w=450&amp;h=159&amp;f=png&amp;s=5835" alt=""></p>
+<ol start="4">
+<li><strong>查</strong></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/1657569505d1d8be?w=450&amp;h=413&amp;f=png&amp;s=18536" alt=""></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/165756c8a553154d?w=496&amp;h=858&amp;f=png&amp;s=22168" alt=""></p>
+<p>最后附上一篇博客，里面有对这些API更详细的解释<a href="http://luopq.com/2015/11/30/javascript-dom/" target="_blank" rel="noopener">DOM常用API总结</a></p>
 
       
     </div>
@@ -373,8 +413,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/28/CSS居中/" rel="next" title="CSS居中">
-                <i class="fa fa-chevron-left"></i> CSS居中
+              <a href="/2018/09/04/如何制作一个icon/" rel="next" title="如何制作一个icon">
+                <i class="fa fa-chevron-left"></i> 如何制作一个icon
               </a>
             
           </div>
@@ -382,10 +422,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/29/冒泡排序和选择排序流程图/" rel="prev" title="冒泡排序和选择排序流程图">
-                冒泡排序和选择排序流程图 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -499,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局"><span class="nav-number">1.</span> <span class="nav-text">左右布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#左中右布局"><span class="nav-number">1.1.</span> <span class="nav-text">左中右布局</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM是啥？"><span class="nav-number">1.</span> <span class="nav-text">DOM是啥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM都有啥？"><span class="nav-number">2.</span> <span class="nav-text">DOM都有啥？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM能干啥？"><span class="nav-number">3.</span> <span class="nav-text">DOM能干啥？</span></a></li></ol></div>
             
 
           </div>
