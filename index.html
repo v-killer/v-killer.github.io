@@ -229,6 +229,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/JS函数/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/10/JS函数/" itemprop="url">JS函数</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T21:33:19+08:00">
+                2018-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="如何声明一个函数"><a href="#如何声明一个函数" class="headerlink" title="如何声明一个函数"></a>如何声明一个函数</h2><p>JavaScript有五种方法声明一个函数</p>
+<h3 id="1-function命令"><a href="#1-function命令" class="headerlink" title="1.  function命令"></a>1.  function命令</h3><blockquote>
+<p><code>function</code>声明的代码区块，就是一个函数。<code>function</code>后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="2-3-函数表达式"><a href="#2-3-函数表达式" class="headerlink" title="2,3. 函数表达式"></a>2,3. 函数表达式</h3><blockquote>
+<p>除了<code>function</code>命令声明函数，还可以采用变量赋值的方法</p>
+</blockquote>
+<p>变量赋值声明函数，有两种方法，一种是匿名函数赋值，一种是具名函数赋值。<br>（1）匿名函数赋值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种写法将一个匿名函数赋值给一个变量。这是，这个匿名函数又称函数表达式，因为赋值语句的右侧只能放表达式。</p>
+<p>(2)具名函数赋值</p>
+<p>采用函数表达式声明函数时，<code>function</code>命令后面不带有函数名。如果加上函数名，该函数名只在函数体内部有效，在函数体外部无效。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面代码在函数表达式中加入了函数名<code>b</code>，这个<code>b</code>只能在函数体内部使用，其他地方都不可用。<br>这种写法的用处有两个:  </p>
+<ul>
+<li>可以在函数体内部调用自身</li>
+<li>方便除错。除错工具显示函数调用栈时，将显示函数名，而不再显示这里是一个匿名函数。</li>
+</ul>
+<h3 id="4-Function-构造函数"><a href="#4-Function-构造函数" class="headerlink" title="4. Function 构造函数"></a>4. Function 构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'return x+y'</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上面代码中，<code>Function</code>构造函数接受三个参数，除了最后一个参数是<code>a</code>函数的函数体，其他参数都是<code>a</code>函数的参数。  </li>
+<li>你可以传递任意数量的参数给<code>Function</code>构造函数，只有最后一个参数会被当成函数体，如果只有一个参数，该参数就是函数体。</li>
+<li><code>Funciton</code>构造函数可以不使用<code>new</code>命令，返回结果完全一样。</li>
+</ul>
+<h3 id="5-箭头函数"><a href="#5-箭头函数" class="headerlink" title="5. 箭头函数"></a>5. 箭头函数</h3><p>箭头函数其实就是函数表达式方法中，匿名函数赋值的省略版本。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如果箭头函数的代码块部分只有一句，则可以省略<code>return</code>和大括号。注意，必须同时省略。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x+y</span><br></pre></td></tr></table></figure></p>
+<p>如果箭头函数的参数只有一个，则可以省略圆括号。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">x</span> =&gt;</span> x*x</span><br></pre></td></tr></table></figure></p>
+<h2 id="函数的name属性"><a href="#函数的name属性" class="headerlink" title="函数的name属性"></a>函数的name属性</h2><blockquote>
+<p>函数的name属性返回函数的名字</p>
+</blockquote>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/28/16580d83c31f18e4?w=888&amp;h=790&amp;f=png&amp;s=132217" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/JS数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1917,185 +2065,6 @@ document.body.ontouchstart === undefined // 如果在手机上返回true,在电�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/冒泡排序和选择排序流程图/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/29/冒泡排序和选择排序流程图/" itemprop="url">冒泡排序和选择排序流程图</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-29T14:54:15+08:00">
-                2018-08-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><ol>
-<li>比较相邻的元素。如果第一个比第二个大，就交换他们两个。</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个。</li>
-<li>持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</li>
-</ol>
-<h4 id="冒泡排序流程图"><a href="#冒泡排序流程图" class="headerlink" title="冒泡排序流程图"></a>冒泡排序流程图</h4><p><img src="https://user-gold-cdn.xitu.io/2018/6/25/16436af307e81502?w=498&amp;h=1020&amp;f=png&amp;s=40181" alt=""></p>
-<h4 id="伪代码"><a href="#伪代码" class="headerlink" title="伪代码"></a>伪代码</h4><pre><code>a &lt;- {
-&apos;0&apos;:4,
-&apos;1&apos;:6,
-&apos;2&apos;:3,
-&apos;3&apos;:2,
-&apos;4&apos;:1,
-&apos;length&apos;: 5
-}
-轮数 = 1
-左手指向的下标 
-
-while(轮数 &lt; a[&apos;length&apos;])
-    左标 = 0
-    while(左标 &lt;= a[&apos;length&apos;] - 1 - 轮数)
-        if a[左下标] &lt; a[左下标+1]
-        else
-            t &lt;- a[左标]
-            a[左标] &lt;- a[左标+1]
-            a[左标+1] &lt;- t
-        end
-        左标 &lt;- 左标+1
-    end
-    轮数 &lt;- 轮数 + 1
-end
-print a
-</code></pre><h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p><strong>工作原理</strong>: 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
-<h4 id="选择排序流程图"><a href="#选择排序流程图" class="headerlink" title="选择排序流程图"></a>选择排序流程图</h4><p><img src="https://user-gold-cdn.xitu.io/2018/6/11/163ee33b498539b7?w=454&amp;h=1022&amp;f=png&amp;s=43998" alt=""></p>
-<h4 id="伪代码-1"><a href="#伪代码-1" class="headerlink" title="伪代码"></a>伪代码</h4><pre><code>    a&lt;-{
-    &apos;0&apos;=4,
-    &apos;1&apos;=6,
-    &apos;2&apos;=3,
-    &apos;3&apos;=2,
-    &apos;4&apos;=1,
-    &apos;length&apos;=5
-}
-轮数=1
-    while(轮数&lt;a[&apos;length&apos;])
-        min左标&lt;-轮数-1;左标&lt;-min左标+1
-        while(左标&lt;a[&apos;length&apos;])
-            if  a[左标]&lt;a[min左标]
-                a[min左标]&lt;-a[左标]
-            else
-                什么也不做
-            end
-            左标&lt;-左标+1
-        end
-        t&lt;-a[轮数-1]
-        a[轮数-1]&lt;-a[min左标]
-        a[min左标]&lt;-t
-
-        轮数&lt;-轮数+1
-    end
-    print a
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2146,7 +2115,7 @@ print a
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
