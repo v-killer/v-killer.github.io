@@ -229,6 +229,228 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/JS数据类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/31/JS数据类型/" itemprop="url">JS数据类型</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-31T13:41:56+08:00">
+                2018-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="JS历史"><a href="#JS历史" class="headerlink" title="JS历史"></a>JS历史</h4><p><img src="https://user-gold-cdn.xitu.io/2018/7/13/1649401a87b13c0b?w=1554&amp;h=259&amp;f=png&amp;s=42047" alt=""></p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><p>七种数据类型(请背诵): </p>
+<ul>
+<li><code>number</code>(数值) </li>
+<li><code>string</code>(字符串) </li>
+<li><code>boolean</code>(布尔值) </li>
+<li><code>Symbol</code>(符号) </li>
+<li><code>object</code>(对象) </li>
+<li><code>undefined</code> </li>
+<li><code>null</code>  </li>
+<li>注意：没有<code>arry</code>类型也没有<code>function</code>类型。</li>
+</ul>
+<ol>
+<li><code>number</code></li>
+</ol>
+<ul>
+<li>整数和小数：<code>1</code> <code>0.1</code> <code>.1</code></li>
+<li>科学计数法: <code>1.23e2</code></li>
+<li>二进制: <code>0b11</code></li>
+<li>八进制: <code>011</code>(后来ES5添加了<code>0o11</code>语法)</li>
+<li>十六进制: <code>0x11</code></li>
+</ul>
+<ol start="2">
+<li><code>string</code></li>
+</ol>
+<ul>
+<li>空字符串: <code>&#39;&#39;</code> <code>&quot;&quot;</code> length为0</li>
+<li>空格字符串: <code>&#39; &#39;</code> <code>&quot; &quot;</code> length为1</li>
+<li><p>多行字符串</p>
+<pre><code>var a = &apos;12345&apos; + 
+        &apos;67890&apos;  //无回车符号
+var a = `12345
+67890`           //含回车符号
+var a = &apos;12345 \
+67890&apos;           //不推荐使用，若反斜杠后有空格则报错。
+</code></pre></li>
+</ul>
+<ol start="3">
+<li><code>boolean</code></li>
+</ol>
+<ul>
+<li>乔治·布尔<br>乔治·布尔是英格兰数学家和哲学家、数理逻辑学先驱。<br>由于其在符号逻辑运算中的特殊贡献，很多计算机语言中将逻辑运算称为布尔运算，将其结果称为布尔值。</li>
+<li><code>boolean</code>的取值<br>只有两个值：<code>true</code> <code>false</code><br><code>a&amp;&amp;b</code>即在a和b都为true时，取值为true,否则均取值为false（与门）<br><code>a||b</code>即在a和b都为false时，取值为false,否则均为true（或门）</li>
+</ul>
+<ol start="4">
+<li><code>Symbol</code><br>Symbol生成一个全局唯一的值</li>
+<li><code>undefined</code>和<code>null</code>  </li>
+</ol>
+<ul>
+<li>都表示没有值。一般来说<code>null</code>表示空对象，<code>undefined</code>表示空字符串/数值/布尔值/Symbol。</li>
+<li>(规范)如果一个变量没有被赋值，那么这个变量的值就是<code>undefined</code></li>
+<li>(惯例)如果你想表示一个还没有被赋值的对象，就用<code>null</code>。<br><code>var obj = null</code> </li>
+<li>(惯例)如果你想表示一个还没有被赋值的字符串/数值/布尔值/Symbol,就用<code>undefined</code>。<br><code>var xxx = undefined</code>实际上只需要<code>var xxx</code></li>
+</ul>
+<ol start="6">
+<li><code>object</code></li>
+</ol>
+<ul>
+<li><code>object</code>就是上面几种基本类型(无序的)组合在一起</li>
+<li><code>object</code>的key一律是字符串，不存在其他类型的key</li>
+<li><p><code>object</code>里面可以有<code>object</code>  </p>
+<pre><code>var person = {
+    name: &apos;Lilei&apos;,
+    &apos;child&apos;:{
+        name: &apos;Jack&apos;
+    }, // 最后这个逗号可有可无
+}
+</code></pre></li>
+<li><p><code>object[&#39;&#39;]</code>是合法的</p>
+</li>
+<li>如果key符合标识符条件的话<code>object[&#39;key&#39;]</code>可以写作<code>object.key</code>  ,注意<code>object.key</code>不同于<code>object[key]</code></li>
+<li><code>delete object[&#39;key&#39;]</code>(同时删除<code>key</code>和<code>value</code>)</li>
+<li><code>&#39;key&#39; in object</code>检测’key’是否在object里面，返回一个布尔值(即使键值为undefined)</li>
+</ul>
+<h4 id="typeof运算符"><a href="#typeof运算符" class="headerlink" title="typeof运算符"></a>typeof运算符</h4><table>
+<thead>
+<tr>
+<th>xxx的类型</th>
+<th>string</th>
+<th>number</th>
+<th>boolean</th>
+<th>symbol</th>
+<th>undefined</th>
+<th>null</th>
+<th>object</th>
+<th style="text-align:center">function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeof xxx</td>
+<td>‘string’</td>
+<td>‘number’</td>
+<td>‘boolean’</td>
+<td>‘symbol’</td>
+<td>‘undefined’</td>
+<td><strong>‘object’</strong></td>
+<td>‘object’</td>
+<td style="text-align:center"><strong>‘function’</strong></td>
+</tr>
+</tbody>
+</table>
+<p>注意：<strong>function</strong>并不是一个类型</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/监听鼠标事件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1793,7 +2015,7 @@ align-items: center;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
