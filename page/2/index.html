@@ -229,6 +229,247 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/JS里的数据类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/JS里的数据类型转换/" itemprop="url">JS里的数据类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:03:20+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="任意类型的值转换为字符串"><a href="#任意类型的值转换为字符串" class="headerlink" title="任意类型的值转换为字符串"></a>任意类型的值转换为字符串</h3><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p><strong>toString()函数返回一个表示该对象的字符串</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>返回值</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>相应的字符串</td>
+<td><code>var x = 1; x.toString;  // 返回 &quot;1&quot;</code></td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>还是原来的值</td>
+<td><code>var x = &quot;qwer&quot;; x.toString(); // 返回 &quot;qwer&quot;</code></td>
+</tr>
+<tr>
+<td>布尔值</td>
+<td><code>true</code>转换为字符串<code>&quot;true&quot;</code> <code>false</code>转换为字符串<code>&quot;false&quot;</code></td>
+<td><code>var x = true; x.toString(); // 返回&quot;true&quot;</code></td>
+</tr>
+<tr>
+<td>对象(非数组)</td>
+<td>返回一个类型字符串: “[object,Object]”</td>
+<td><code>var x = {a: 1};x.toString(); // 返回&quot;[object,Object]&quot;</code></td>
+</tr>
+<tr>
+<td>对象(数组)</td>
+<td>返回该数组的字符串形式</td>
+<td><code>var x = [1,2,3]; x.toString(); // 返回&quot;1,2,3&quot;</code></td>
+</tr>
+<tr>
+<td>null</td>
+<td>报错</td>
+<td><code>Uncaught TypeError: Cannot read property &#39;toString&#39; of null</code></td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>报错</td>
+<td><code>Uncaught TypeError: Cannot read property &#39;toString&#39; of undefined</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h3><p><strong>你也可以使用String函数将任意类型的值转换为字符串</strong></p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>返回值</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数值</td>
+<td>相应的字符串</td>
+<td><code>var x = 1; String(x);  // 返回 &quot;1&quot;</code></td>
+</tr>
+<tr>
+<td>字符串</td>
+<td>还是原来的值</td>
+<td><code>var x = &quot;qwer&quot;; String(x); // 返回 &quot;qwer&quot;</code></td>
+</tr>
+<tr>
+<td>布尔值</td>
+<td><code>true</code>转换为字符串<code>&quot;true&quot;</code> <code>false</code>转换为字符串<code>&quot;false&quot;</code></td>
+<td><code>var x = true; String(x); // 返回&quot;true&quot;</code></td>
+</tr>
+<tr>
+<td>对象(非数组)</td>
+<td>返回一个类型字符串: “[object,Object]”</td>
+<td><code>var x = {a: 1};String(x); // 返回&quot;[object,Object]&quot;</code></td>
+</tr>
+<tr>
+<td>对象(数组)</td>
+<td>返回该数组的字符串形式</td>
+<td><code>var x = [1,2,3]; String(x); // 返回&quot;1,2,3&quot;</code></td>
+</tr>
+<tr>
+<td>null</td>
+<td>返回字符串”null”</td>
+<td><code>var x = null; String(x); // 返回&quot;null&quot;</code></td>
+</tr>
+<tr>
+<td>undefined</td>
+<td>返回字符串”undefined”</td>
+<td><code>var x = undefined; String(x); // 返回&quot;undefined&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>从上述内容可以发现<strong>toString()</strong> 方法和<strong>String()</strong> 方法不同之处在于<code>null</code> 和<code>undefined</code> 的返回值不同，这是因为<strong>String()</strong> 方法的底层用的就是<strong>toString()</strong> 方法，但是<strong>String()</strong> 针对<code>null</code>、<code>undefined</code>、<code>Symbol</code> 会有特殊处理，所以使用<strong>String</strong> 方法将其它对象转化为字符串可以被认为是一种更加安全的做法。</li>
+<li>toSting()方法可以将一个数字转为16进制的数字  </li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f53c90e228d16?w=307&amp;h=93&amp;f=png&amp;s=1754" alt=""></p>
+<h3 id="加法运算符"><a href="#加法运算符" class="headerlink" title="加法运算符"></a>加法运算符</h3><ul>
+<li>加法运算符<code>+</code>是最常见的运算符，用来求两个数值的和。</li>
+<li>JavaScript 允许非数值的相加。</li>
+<li>比较特殊的是，如果是两个字符串相加，这时加法运算符会变成连接运算符，返回一个新的字符串，将两个原字符串连接在一起。</li>
+<li>如果一个运算子是字符串，另一个运算子是非字符串，这时非字符串会转成字符串，再连接在一起。<br>例如:<code>1 + &quot;a&quot; //  &quot;1a&quot;</code> 所以我们利用JS的这种特性可以更快捷的将任意类型的值转换为字符串,<br>也就是<strong>用一个任意类型的值加上一个空字符串</strong><br><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649ae3964bfb594?w=424&amp;h=268&amp;f=png&amp;s=5787" alt=""><br>和使用String()方法得到的结果是一样的。</li>
+</ul>
+<h3 id="任意类型的值转换为布尔值"><a href="#任意类型的值转换为布尔值" class="headerlink" title="任意类型的值转换为布尔值"></a>任意类型的值转换为布尔值</h3><h3 id="boolean"><a href="#boolean" class="headerlink" title="boolean()"></a>boolean()</h3><h4 id="boolean函数可以将任意类型的值转换为布尔值"><a href="#boolean函数可以将任意类型的值转换为布尔值" class="headerlink" title="boolean函数可以将任意类型的值转换为布尔值"></a>boolean函数可以将任意类型的值转换为布尔值</h4><p><strong>转换规则</strong><br>除了以下五个值的转换结果为<code>false</code>,其余的值全为<code>true</code></p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>-0</code>或<code>+0</code></li>
+<li><code>NaN</code></li>
+<li><code>&#39;&#39;</code>(空字符串)</li>
+</ul>
+<p>当然<code>false</code>本身转换为布尔值肯定也是<code>false</code>啦。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649af588b6113ea?w=378&amp;h=254&amp;f=png&amp;s=5848" alt=""><br>注意，所有对象（包括空对象）的转换结果都是<code>true</code></p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649af6899169025?w=452&amp;h=244&amp;f=png&amp;s=5645" alt=""></p>
+<h3 id="取反运算符"><a href="#取反运算符" class="headerlink" title="取反运算符(!)"></a>取反运算符(!)</h3><ul>
+<li>取反运算符是一个感叹号，用于将布尔值变为相反值，即<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>。</li>
+<li>对于非布尔值，取反运算符会将其转为布尔值。</li>
+<li>如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与Boolean函数的作用相同。这是一种常用的类型转换的写法。</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649afddc77ee7e7?w=670&amp;h=398&amp;f=png&amp;s=8528" alt=""><br>从图中可以看到： <code>!!</code>得到的结果和<code>Boolean()</code>方法得到的结果是一样的，所以我们可以用这种更便捷的方法转换为布尔值</p>
+<h3 id="任意类型的值转换为数值"><a href="#任意类型的值转换为数值" class="headerlink" title="任意类型的值转换为数值"></a>任意类型的值转换为数值</h3><h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><h4 id="使用Number函数，可以将任意类型的值转化成数值。"><a href="#使用Number函数，可以将任意类型的值转化成数值。" class="headerlink" title="使用Number函数，可以将任意类型的值转化成数值。"></a>使用Number函数，可以将任意类型的值转化成数值。</h4><h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><h3 id="减法运算符"><a href="#减法运算符" class="headerlink" title="减法运算符"></a>减法运算符</h3><h3 id="数值运算符"><a href="#数值运算符" class="headerlink" title="数值运算符"></a>数值运算符</h3>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/31/JS数据类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1448,7 +1689,7 @@ align-items: center;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/初识HTML/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/HTML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -1467,7 +1708,7 @@ align-items: center;
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/27/初识HTML/" itemprop="url">初识HTML</a></h1>
+                <a class="post-title-link" href="/2018/08/27/HTML/" itemprop="url">HTML</a></h1>
         
 
         <div class="post-meta">
@@ -1600,7 +1841,7 @@ align-items: center;
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/初识HTTP/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/HTTP协议/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -1619,7 +1860,7 @@ align-items: center;
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/26/初识HTTP/" itemprop="url">初识HTTP</a></h1>
+                <a class="post-title-link" href="/2018/08/26/HTTP协议/" itemprop="url">HTTP协议</a></h1>
         
 
         <div class="post-meta">
@@ -1763,213 +2004,11 @@ align-items: center;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/初识命令行/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/26/初识命令行/" itemprop="url">初识命令行</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T17:16:27+08:00">
-                2018-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="常见的命令"><a href="#常见的命令" class="headerlink" title="常见的命令"></a>常见的命令</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>cd</td>
-<td>进入目录</td>
-</tr>
-<tr>
-<td>pwd</td>
-<td>显示当前目录</td>
-</tr>
-<tr>
-<td>mkdir</td>
-<td>创建目录</td>
-</tr>
-<tr>
-<td>ls</td>
-<td>查看路径</td>
-</tr>
-<tr>
-<td>echo ‘1’ &gt; 文件路径</td>
-<td>创建文件</td>
-</tr>
-<tr>
-<td>echo ‘1’ &gt;!文件路径</td>
-<td>强制创建文件</td>
-</tr>
-<tr>
-<td>echo ‘1’ &gt;&gt; 文件路径</td>
-<td>追加文件内容</td>
-</tr>
-<tr>
-<td>touch 文件名</td>
-<td>创建文件</td>
-</tr>
-<tr>
-<td>cp 原路径 目标路径</td>
-<td>复制文件</td>
-</tr>
-<tr>
-<td>cp -r 原路径 目标路径</td>
-<td>复制目录</td>
-</tr>
-<tr>
-<td>mv</td>
-<td>移动</td>
-</tr>
-<tr>
-<td>rm 文件路径</td>
-<td>删除文件</td>
-</tr>
-<tr>
-<td>rm -f 文件路径</td>
-<td>强制删除文件</td>
-</tr>
-<tr>
-<td>rm -r 目录路径</td>
-<td>删除目录</td>
-</tr>
-<tr>
-<td>rm -rf 目录路径</td>
-<td>强制删除目录</td>
-</tr>
-<tr>
-<td>tree</td>
-<td>查看目录结构</td>
-</tr>
-<tr>
-<td>ln -s 真实文件 链接</td>
-<td>建立软连接</td>
-</tr>
-<tr>
-<td>cat 文件名</td>
-<td>查看文件内容</td>
-</tr>
-</tbody>
-</table>
-<p>以上就是一些常用的命令行<br>当我们看不懂一些命令的时候，可以进入下面这个命令解释的网站<a href="https://explainshell.com/explain?cmd=ls+-lrt" target="_blank" rel="noopener">命令行释义</a><br>这样我们就可以愉快的使用命令行了</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2019,7 +2058,7 @@ align-items: center;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

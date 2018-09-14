@@ -229,6 +229,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/如何实现页面内跳转/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/如何实现页面内跳转/" itemprop="url">如何实现页面内跳转</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:14:40+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="1-如何实现点击链接跳转页面内指定位置？"><a href="#1-如何实现点击链接跳转页面内指定位置？" class="headerlink" title="1. 如何实现点击链接跳转页面内指定位置？"></a>1. 如何实现点击链接跳转页面内指定位置？</h4><p>我们都知道，通过设置a标签的锚点可以实现页面内跳转。像这样<code>&lt;a href=&quot;#xxx&quot;&gt;&lt;/a&gt;</code>这时点击a标签便跳转到id为xxx的元素。<br>但是这样存在一个问题，如果有导航栏的话，导航栏会遮盖住上面一部分，很不美观，为了避免这种情况，那么我们就需要点击a标签时，使其跳转到我们指定的高度，如何操作呢？</p>
+<p>当然我们还是使用锚点来跳转，但是首先我们要阻止a标签的默认行为也就是点击跳转。因为跳转的位置不是我们想要的。<br>使用<code>preventDefault()</code>方法可以阻止默认行为。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aTags[i].onclick = function(x)&#123;</span><br><span class="line">    x.prenventDefault()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后我们获取用户点击的a标签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let a = x.currentTarget</span><br></pre></td></tr></table></figure></p>
+<p>接着通过该a标签获取跳转内容的高度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">    let href = a.getAtrribute(&apos;href&apos;)  // 获取用户点击的a标签的href，也就是跳转位置的id</span><br><span class="line">    let element = document.querySeletor(href)  // 通过id来获取跳转位置的元素</span><br><span class="line">    let top = element.offsetTop  // 获取该元素距页面顶部的高度</span><br><span class="line">```    </span><br><span class="line">然后通过`scrollTo`跳转,通过设置X,Y的值便可以调整跳转的位置</span><br><span class="line">```    </span><br><span class="line">    window.scrollTo(0,top-80)</span><br><span class="line">```    </span><br><span class="line">我们这里使用跳转位置的高度减去导航栏的高度，这样就不会被导航栏遮挡，可以美观的显示啦</span><br><span class="line"></span><br><span class="line">#### 2. 如何实现页面内跳转的滚动效果?</span><br><span class="line">首先，我们先让一个div动起来，那么如何让他动起来呢？答案就是`setInterval`。  </span><br><span class="line">+ **setInterval**: `setInterval`方法重复调用一个函数或执行一个代码，在每次调用之间具有固定的时间延迟。返回一个IntervalID。  </span><br><span class="line">+ **clearInterval**: IntervalID作为参数传入`clearInterval`，用来取消`setInterval`设置的定时任务。</span><br></pre></td></tr></table></figure></p>
+<pre><code>&lt;body&gt;
+  &lt;div id=&quot;xxx&quot; class=&quot;xxx&quot; style=&quot;width: 100px;height: 100px;background: green;&quot;&gt;&lt;/div&gt;
+&lt;/body&gt;
+  &lt;script&gt;
+    xxx.style.position = &apos;relative&apos;
+    xxx.style.left = 0
+
+    var n = 0
+    var id = setInterval(()=&gt; {  //设置定时任务
+      n=n+1
+      xxx.style.left = n + &apos;px&apos;
+      if(n&gt;200){
+        window.clearInterval(id)  //取消定时任务
+      }
+    },20) //每20ms动一次
+  &lt;/script&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">效果如下：</span><br><span class="line">![](https://user-gold-cdn.xitu.io/2018/8/17/1654701255c3e3c2?w=502&amp;h=203&amp;f=gif&amp;s=66040)</span><br><span class="line"></span><br><span class="line">使用同样的方法让我们的页面动起来</span><br></pre></td></tr></table></figure>
+<pre><code>    let aTags = document.querySelectorAll(&apos;nav.menu &gt; ul &gt; li &gt; a&apos;)
+    for (let i = 0; i &lt; aTags.length; i++) {
+    aTags[i].onclick = function (x) {
+        x.preventDefault()
+        let a = x.currentTarget
+        let href = a.getAttribute(&apos;href&apos;)
+        let element = document.querySelector(href)
+        let top = element.offsetTop
+
+        let n = 20  //一共动多少次
+        let duration = 500 / n  //多长时间动一次
+        let currentTop = window.scrollY  //获取当前高度
+        let targetTop = top - 80 // 获取目标高度
+        let distance = (targetTop - currentTop)/ n  //当前高度减去目标高度，也就是要动的距离
+        let i = 0
+        let id = setInterval(()=&gt; {
+            if(i===n){
+                window.clearInterval(id)  // 到达目标时停止
+                return
+            }
+            i=i+1
+            window.scrollTo(0,currentTop + distance * i)
+        },duration)
+    }
+}
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">效果如下：</span><br><span class="line"></span><br><span class="line">![](https://user-gold-cdn.xitu.io/2018/8/22/165606904cedb2c3?w=1899&amp;h=819&amp;f=gif&amp;s=3229936)</span><br><span class="line">如果想要滚动效果更好的话，我们可以使用tween.js添加滚动效果。网址:[https://github.com/tweenjs/tween.js/](https://github.com/tweenjs/tween.js/)</span><br><span class="line"></span><br><span class="line">首先我们需要引用这个js文件，使用[cdnjs.com](https://cdnjs.com/)可以查找到tween.js的在线引用地址</span><br><span class="line"></span><br><span class="line">![](https://user-gold-cdn.xitu.io/2018/8/22/165607fcb3c3e5bd?w=1901&amp;h=361&amp;f=png&amp;s=29379)</span><br><span class="line">引用</span><br><span class="line"></span><br><span class="line">    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">接着我们使用tween来设置效果</span><br></pre></td></tr></table></figure>
+<pre><code>let aTags = document.querySelectorAll(&apos;nav.menu &gt; ul &gt; li &gt; a&apos;)
+
+function animate(time) {
+    requestAnimationFrame(animate);
+    TWEEN.update(time);
+}
+requestAnimationFrame(animate); //  // 别问，在前面加上这段代码！
+
+for (let i = 0; i &lt; aTags.length; i++) {
+    aTags[i].onclick = function (x) {
+        x.preventDefault()
+        let a = x.currentTarget
+        let href = a.getAttribute(&apos;href&apos;)
+        let element = document.querySelector(href)
+        let top = element.offsetTop 
+
+        let currentTop = window.scrollY
+        let targetTop = top - 80
+        var coords = { y: currentTop };  //设置初识位置
+        var tween = new TWEEN.Tween(coords)
+            .to({ y: targetTop }, 1000) // 设置结束位置为y和时间为1s
+            .easing(TWEEN.Easing.Quadratic.InOut)//设置滚动效果为&apos;淡入淡出&apos;
+            .onUpdate(function () {
+                window.scrollTo(0, coords.y) // 如何更新界面
+            })
+            .start();
+    }
+}
+</code></pre><p><code>`</code><br>最后推荐一个控制滚动效果的缓动函数网站<a href="https://easings.net/zh-cn" target="_blank" rel="noopener">缓动函数速查</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/12/移动端适配/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -380,7 +575,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/初识jQuery/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/11/jQuery原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -399,7 +594,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/11/初识jQuery/" itemprop="url">初识jQuery</a></h1>
+                <a class="post-title-link" href="/2018/09/11/jQuery原理/" itemprop="url">jQuery原理</a></h1>
         
 
         <div class="post-meta">
@@ -1743,252 +1938,11 @@ overflow: hidden;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/JS里的数据类型转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/JS里的数据类型转换/" itemprop="url">JS里的数据类型转换</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:03:20+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="任意类型的值转换为字符串"><a href="#任意类型的值转换为字符串" class="headerlink" title="任意类型的值转换为字符串"></a>任意类型的值转换为字符串</h3><h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p><strong>toString()函数返回一个表示该对象的字符串</strong></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>返回值</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数值</td>
-<td>相应的字符串</td>
-<td><code>var x = 1; x.toString;  // 返回 &quot;1&quot;</code></td>
-</tr>
-<tr>
-<td>字符串</td>
-<td>还是原来的值</td>
-<td><code>var x = &quot;qwer&quot;; x.toString(); // 返回 &quot;qwer&quot;</code></td>
-</tr>
-<tr>
-<td>布尔值</td>
-<td><code>true</code>转换为字符串<code>&quot;true&quot;</code> <code>false</code>转换为字符串<code>&quot;false&quot;</code></td>
-<td><code>var x = true; x.toString(); // 返回&quot;true&quot;</code></td>
-</tr>
-<tr>
-<td>对象(非数组)</td>
-<td>返回一个类型字符串: “[object,Object]”</td>
-<td><code>var x = {a: 1};x.toString(); // 返回&quot;[object,Object]&quot;</code></td>
-</tr>
-<tr>
-<td>对象(数组)</td>
-<td>返回该数组的字符串形式</td>
-<td><code>var x = [1,2,3]; x.toString(); // 返回&quot;1,2,3&quot;</code></td>
-</tr>
-<tr>
-<td>null</td>
-<td>报错</td>
-<td><code>Uncaught TypeError: Cannot read property &#39;toString&#39; of null</code></td>
-</tr>
-<tr>
-<td>undefined</td>
-<td>报错</td>
-<td><code>Uncaught TypeError: Cannot read property &#39;toString&#39; of undefined</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h3><p><strong>你也可以使用String函数将任意类型的值转换为字符串</strong></p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>返回值</th>
-<th>例子</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>数值</td>
-<td>相应的字符串</td>
-<td><code>var x = 1; String(x);  // 返回 &quot;1&quot;</code></td>
-</tr>
-<tr>
-<td>字符串</td>
-<td>还是原来的值</td>
-<td><code>var x = &quot;qwer&quot;; String(x); // 返回 &quot;qwer&quot;</code></td>
-</tr>
-<tr>
-<td>布尔值</td>
-<td><code>true</code>转换为字符串<code>&quot;true&quot;</code> <code>false</code>转换为字符串<code>&quot;false&quot;</code></td>
-<td><code>var x = true; String(x); // 返回&quot;true&quot;</code></td>
-</tr>
-<tr>
-<td>对象(非数组)</td>
-<td>返回一个类型字符串: “[object,Object]”</td>
-<td><code>var x = {a: 1};String(x); // 返回&quot;[object,Object]&quot;</code></td>
-</tr>
-<tr>
-<td>对象(数组)</td>
-<td>返回该数组的字符串形式</td>
-<td><code>var x = [1,2,3]; String(x); // 返回&quot;1,2,3&quot;</code></td>
-</tr>
-<tr>
-<td>null</td>
-<td>返回字符串”null”</td>
-<td><code>var x = null; String(x); // 返回&quot;null&quot;</code></td>
-</tr>
-<tr>
-<td>undefined</td>
-<td>返回字符串”undefined”</td>
-<td><code>var x = undefined; String(x); // 返回&quot;undefined&quot;</code></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>从上述内容可以发现<strong>toString()</strong> 方法和<strong>String()</strong> 方法不同之处在于<code>null</code> 和<code>undefined</code> 的返回值不同，这是因为<strong>String()</strong> 方法的底层用的就是<strong>toString()</strong> 方法，但是<strong>String()</strong> 针对<code>null</code>、<code>undefined</code>、<code>Symbol</code> 会有特殊处理，所以使用<strong>String</strong> 方法将其它对象转化为字符串可以被认为是一种更加安全的做法。</li>
-<li>toSting()方法可以将一个数字转为16进制的数字  </li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f53c90e228d16?w=307&amp;h=93&amp;f=png&amp;s=1754" alt=""></p>
-<h3 id="加法运算符"><a href="#加法运算符" class="headerlink" title="加法运算符"></a>加法运算符</h3><ul>
-<li>加法运算符<code>+</code>是最常见的运算符，用来求两个数值的和。</li>
-<li>JavaScript 允许非数值的相加。</li>
-<li>比较特殊的是，如果是两个字符串相加，这时加法运算符会变成连接运算符，返回一个新的字符串，将两个原字符串连接在一起。</li>
-<li>如果一个运算子是字符串，另一个运算子是非字符串，这时非字符串会转成字符串，再连接在一起。<br>例如:<code>1 + &quot;a&quot; //  &quot;1a&quot;</code> 所以我们利用JS的这种特性可以更快捷的将任意类型的值转换为字符串,<br>也就是<strong>用一个任意类型的值加上一个空字符串</strong><br><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649ae3964bfb594?w=424&amp;h=268&amp;f=png&amp;s=5787" alt=""><br>和使用String()方法得到的结果是一样的。</li>
-</ul>
-<h3 id="任意类型的值转换为布尔值"><a href="#任意类型的值转换为布尔值" class="headerlink" title="任意类型的值转换为布尔值"></a>任意类型的值转换为布尔值</h3><h3 id="boolean"><a href="#boolean" class="headerlink" title="boolean()"></a>boolean()</h3><h4 id="boolean函数可以将任意类型的值转换为布尔值"><a href="#boolean函数可以将任意类型的值转换为布尔值" class="headerlink" title="boolean函数可以将任意类型的值转换为布尔值"></a>boolean函数可以将任意类型的值转换为布尔值</h4><p><strong>转换规则</strong><br>除了以下五个值的转换结果为<code>false</code>,其余的值全为<code>true</code></p>
-<ul>
-<li><code>undefined</code></li>
-<li><code>null</code></li>
-<li><code>-0</code>或<code>+0</code></li>
-<li><code>NaN</code></li>
-<li><code>&#39;&#39;</code>(空字符串)</li>
-</ul>
-<p>当然<code>false</code>本身转换为布尔值肯定也是<code>false</code>啦。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649af588b6113ea?w=378&amp;h=254&amp;f=png&amp;s=5848" alt=""><br>注意，所有对象（包括空对象）的转换结果都是<code>true</code></p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649af6899169025?w=452&amp;h=244&amp;f=png&amp;s=5645" alt=""></p>
-<h3 id="取反运算符"><a href="#取反运算符" class="headerlink" title="取反运算符(!)"></a>取反运算符(!)</h3><ul>
-<li>取反运算符是一个感叹号，用于将布尔值变为相反值，即<code>true</code>变成<code>false</code>，<code>false</code>变成<code>true</code>。</li>
-<li>对于非布尔值，取反运算符会将其转为布尔值。</li>
-<li>如果对一个值连续做两次取反运算，等于将其转为对应的布尔值，与Boolean函数的作用相同。这是一种常用的类型转换的写法。</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/7/15/1649afddc77ee7e7?w=670&amp;h=398&amp;f=png&amp;s=8528" alt=""><br>从图中可以看到： <code>!!</code>得到的结果和<code>Boolean()</code>方法得到的结果是一样的，所以我们可以用这种更便捷的方法转换为布尔值</p>
-<h3 id="任意类型的值转换为数值"><a href="#任意类型的值转换为数值" class="headerlink" title="任意类型的值转换为数值"></a>任意类型的值转换为数值</h3><h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><h4 id="使用Number函数，可以将任意类型的值转化成数值。"><a href="#使用Number函数，可以将任意类型的值转化成数值。" class="headerlink" title="使用Number函数，可以将任意类型的值转化成数值。"></a>使用Number函数，可以将任意类型的值转化成数值。</h4><h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><h3 id="减法运算符"><a href="#减法运算符" class="headerlink" title="减法运算符"></a>减法运算符</h3><h3 id="数值运算符"><a href="#数值运算符" class="headerlink" title="数值运算符"></a>数值运算符</h3>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2038,7 +1992,7 @@ overflow: hidden;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
