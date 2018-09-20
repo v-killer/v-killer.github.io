@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数据库 文件系统是一种数据库 MySQL是一种数据库  局部刷新怎么做方案一： 用图片造GET请求12345678910button.addEventListener(&apos;click&apos;, (e)=&amp;gt;&amp;#123;    let image = document.createElement(&apos;img&apos;)    image.src = &apos;/pay&apos;    image.onload = functio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JOSNP">
+<meta property="og:url" content="http://yoursite.com/2018/09/20/JOSNP/index.html">
+<meta property="og:site_name" content="Study Notes">
+<meta property="og:description" content="数据库 文件系统是一种数据库 MySQL是一种数据库  局部刷新怎么做方案一： 用图片造GET请求12345678910button.addEventListener(&apos;click&apos;, (e)=&amp;gt;&amp;#123;    let image = document.createElement(&apos;img&apos;)    image.src = &apos;/pay&apos;    image.onload = functio">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-20T15:14:46.285Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JOSNP">
+<meta name="twitter:description" content="数据库 文件系统是一种数据库 MySQL是一种数据库  局部刷新怎么做方案一： 用图片造GET请求12345678910button.addEventListener(&apos;click&apos;, (e)=&amp;gt;&amp;#123;    let image = document.createElement(&apos;img&apos;)    image.src = &apos;/pay&apos;    image.onload = functio">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/09/20/JOSNP/"/>
+
+
+
+
+
+  <title>JOSNP | Study Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Study Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/JOSNP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JOSNP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T23:14:20+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ol>
+<li>文件系统是一种数据库</li>
+<li>MySQL是一种数据库</li>
+</ol>
+<h3 id="局部刷新怎么做"><a href="#局部刷新怎么做" class="headerlink" title="局部刷新怎么做"></a>局部刷新怎么做</h3><p>方案一： 用图片造GET请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(<span class="string">'click'</span>, (e)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> image = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">    image.src = <span class="string">'/pay'</span></span><br><span class="line">    image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 状态码是 200~299 则表示成功</span></span><br><span class="line">        alert(<span class="string">'成功'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 状态码大于等于 400 则表示失败</span></span><br><span class="line">        alert(<span class="string">'失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>后端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var amount = fs.readFileSync(&apos;./db&apos;,&apos;utf-8&apos;)</span><br><span class="line">var newAmount = amount - 1</span><br><span class="line">fs.writeFileSync(&apos;./db&apos;,newAmount)</span><br><span class="line">response.setHeader(&apos;Content-Type&apos;,&apos;image/jpg&apos;)</span><br><span class="line">response.statusCode = 200</span><br><span class="line">response.write(fs.readFileSync(&apos;./dog.jpg&apos;)) // 响应一个真图片欺骗浏览器</span><br><span class="line">response.end()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>弊端：后台需要返回一个真的图片欺骗浏览器</li>
+</ul>
+<p>方案二： 用script造GET请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(<span class="string">'click'</span>, (e)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">    script.src = <span class="string">'/pay'</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script) <span class="comment">// 将script标签加入body,否则会加载失败</span></span><br><span class="line">    script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// 状态码是 200~299 则表示成功</span></span><br><span class="line">        e.currentTarget.remove()  <span class="comment">// 删掉这个script标签</span></span><br><span class="line">    &#125;</span><br><span class="line">    script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// 状态码大于等于 400 则表示失败</span></span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>后端代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (path === <span class="string">'/pay'</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> amount = fs.readFileSync(<span class="string">'./db'</span>, <span class="string">'utf8'</span>) <span class="comment">// 读取db文件里的数据</span></span><br><span class="line">    amount -= <span class="number">1</span>  </span><br><span class="line">    fs.writeFileSync(<span class="string">'./db'</span>, amount) <span class="comment">// 将运算后amount的写入db文件</span></span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/javascript'</span>)</span><br><span class="line">    response.write(<span class="string">'amount.innerText = amount.innerText - 1'</span>)</span><br><span class="line">    response.end()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种技术叫做<strong>SRJ</strong>： Server Rendered JavaScript</p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>请求方：frank.com 的前端程序员（浏览器）<br>响应方：jack.com 的后端程序员（服务器）</p>
+<ol>
+<li>请求方创建 script，src 指向响应方，同时传一个查询参数 ?callbackName=yyy</li>
+<li>响应方根据查询参数callbackName，构造形如yyy.call(undefined, ‘你要的数据’)这样的响应</li>
+<li>浏览器接收到响应，就会执行 yyy.call(undefined, ‘你要的数据’)</li>
+<li>那么请求方就知道了他要的数据</li>
+</ol>
+<p>这就是JSONP，动态标签跨域请求技术。</p>
+<h3 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(&apos;click&apos;, (e)=&gt;&#123;</span><br><span class="line">    let script = document.createElement(&apos;script&apos;)</span><br><span class="line">    let functionName = &apos;frank&apos;+ parseInt(Math.random()*10000000 ,10)</span><br><span class="line">    window[functionName] = function()&#123;  // 每次请求之前搞出一个随机的函数</span><br><span class="line">        amount.innerText = amount.innerText - 0 - 1</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = &apos;/pay?callback=&apos; + functionName</span><br><span class="line">    document.body.appendChild(script)</span><br><span class="line">    script.onload = function(e)&#123; // 状态码是 200~299 则表示成功</span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] // 请求完了就干掉这个随机函数</span><br><span class="line">    &#125;</span><br><span class="line">    script.onload = function(e)&#123; // 状态码大于等于 400 则表示失败</span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] // 请求完了就干掉这个随机函数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>后端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (path === &apos;/pay&apos;)&#123;</span><br><span class="line">    let amount = fs.readFileSync(&apos;./db&apos;, &apos;utf8&apos;)</span><br><span class="line">    amount -= 1</span><br><span class="line">    fs.writeFileSync(&apos;./db&apos;, amount)</span><br><span class="line">    let callbackName = query.callback</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;, &apos;application/javascript&apos;)</span><br><span class="line">    response.write(`</span><br><span class="line">        $&#123;callbackName&#125;.call(undefined, &apos;success&apos;)</span><br><span class="line">    `)</span><br><span class="line">    response.end()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> JSONP的一些约定</p>
+<ul>
+<li>callbackName约定写成callback</li>
+<li>函数名yyy写成一个随机数frank1231321564()</li>
+</ul>
+<p>终极方案，用jQuery写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">url: &quot;http://jack.com:8002/pay&quot;,</span><br><span class="line">dataType: &quot;jsonp&quot;,</span><br><span class="line">success: function( response ) &#123;</span><br><span class="line">    if(response === &apos;success&apos;)&#123;</span><br><span class="line">    amount.innerText = amount.innerText - 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.jsonp()</span><br></pre></td></tr></table></figure></p>
+<h4 id="JOSNP为什么不支持POST请求"><a href="#JOSNP为什么不支持POST请求" class="headerlink" title="JOSNP为什么不支持POST请求"></a>JOSNP为什么不支持POST请求</h4><ol>
+<li>因为是JOSNP通过动态创建script实现的</li>
+<li>动态创建script的时候只能用get,不能用post</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/14/如何实现页面内跳转/" rel="next" title="如何实现页面内跳转">
+                <i class="fa fa-chevron-left"></i> 如何实现页面内跳转
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/default_avatar.png"
+                alt="剑指天涯心有梦" />
+            
+              <p class="site-author-name" itemprop="name">剑指天涯心有梦</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/v-killer" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.weibo.com/u/6039070090/home?wvr=5" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5b053ef0518825426c693444/posts" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-globe"></i>掘金</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部刷新怎么做"><span class="nav-number">2.</span> <span class="nav-text">局部刷新怎么做</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">3.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案三"><span class="nav-number">4.</span> <span class="nav-text">方案三</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JOSNP为什么不支持POST请求"><span class="nav-number">4.1.</span> <span class="nav-text">JOSNP为什么不支持POST请求</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">剑指天涯心有梦</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -229,6 +229,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/JS对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/JS对象/" itemprop="url">JS对象</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:05:43+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="全局对象window"><a href="#全局对象window" class="headerlink" title="全局对象window"></a>全局对象window</h3><h4 id="window的属性"><a href="#window的属性" class="headerlink" title="window的属性"></a>window的属性</h4><h3 id="1-ECMAScript规定的属性"><a href="#1-ECMAScript规定的属性" class="headerlink" title="1. ECMAScript规定的属性"></a>1. ECMAScript规定的属性</h3><ul>
+<li>parseInt</li>
+<li>parseFloat</li>
+<li>Number()<br>我们有两种方法可以声明一个Number<br><code>var n1 = 1; // 声明一个数字1</code><br><code>var n2 = new Number(1); // 声明一个Number对象,对象的数字值是1</code><br>区别在于对象1有很多方法可以调用，如<code>toSring</code>、<code>valueof</code>等，数字1则没有。<br>但是在实际应用中我们发现即使声明一个数字1，我们同样可以使用<code>toString</code>方法，<br>这是因为当使用数字1的<code>toString</code>方法时，JS会声明一个临时的对象<code>temp = new Number(n1)</code>,将<code>temp.toString</code>的值作为<code>n1.toString</code>的值，然后把<code>temp</code>干掉。</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/22/164bec805719e140?w=263&amp;h=165&amp;f=png&amp;s=4027" alt=""></p>
+<ul>
+<li>String()<br>同样我们有两种方法可以声明一个String<br><code>var s1 =&#39;abc&#39; // 声明一个基本类型的字符串</code><br><code>var s2 = new String(&#39;abc&#39;) // 声明一个String对象,这个对象看起来像数组但不是数组,它只是一个hash</code></li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/7/22/164bed06c64c8cbe?w=388&amp;h=190&amp;f=png&amp;s=8829" alt=""><br><strong>String的一些方法</strong></p>
+<ol>
+<li><code>charAt</code>方法从一个字符串中返回指定的字符<br>语法：<code>string.charAt(index)</code></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f535a75de950d?w=235&amp;h=115&amp;f=png&amp;s=2396" alt=""></p>
+<ol start="2">
+<li><code>charCodeAt</code>方法根据索引获取某一个字符的编码<br>语法:<code>string.charCodeAt()</code></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f538b883bf1d9?w=230&amp;h=140&amp;f=png&amp;s=2138" alt=""></p>
+<ol start="3">
+<li><code>trim</code>方法会从一个字符串的两端删除空白字符。<br>语法：<code>string.trim()</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f540ab9fa171d?w=353&amp;h=96&amp;f=png&amp;s=1470" alt=""></li>
+<li><code>concat</code>方法将一个或多个字符串与原字符串合并。<br>语法：<code>string.concat(string2,string3)</code></li>
+</ol>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f545e5b53435b?w=214&amp;h=180&amp;f=png&amp;s=3172" alt=""><br><code>replace</code></p>
+<ul>
+<li>Boolean()<br>同样我们有两种方法可以声明一个Boolean<br><code>var b1 = true</code><br><code>var b2 = new Boolean(true)</code><br>注意：false对象的布尔值是true<br><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f5572b9adf049?w=249&amp;h=131&amp;f=png&amp;s=3348" alt=""></li>
+<li>Object()<br>同样我们有两种方法声明一个对象<br><code>var o1 = {}</code><br><code>var o2 = new object()</code><br>两种方法并没有什么区别，但是o1并不严格相等o2，这是因为内存不同</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f55db07364eab?w=285&amp;h=200&amp;f=png&amp;s=3777" alt=""></p>
+<ul>
+<li>setTimeout(function(){},5)<h3 id="2-浏览器私有的属性-Chrome-Firefox"><a href="#2-浏览器私有的属性-Chrome-Firefox" class="headerlink" title="2. 浏览器私有的属性(Chrome/Firefox)"></a>2. 浏览器私有的属性(Chrome/Firefox)</h3></li>
+<li>alert(弹框提示)</li>
+<li>prompt(用户填写)</li>
+<li>confirm(确认)</li>
+<li>console(开发者)</li>
+<li>document(文档)</li>
+</ul>
+<hr>
+<h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>我们创建的每个函数的都有一个prototype(原型)属性，这个属性是一个指针(内存地址)，指向一个对象(原型对象)。<br>这个对象(原型对象)的用途是包含可以由特定类型的所有实例共享的属性和方法。<br><img src="https://user-gold-cdn.xitu.io/2018/8/2/164f97a098109635?w=590&amp;h=512&amp;f=jpeg&amp;s=21422" alt=""></p>
+<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>每个实例对象（object ）都有一个私有属性（称之为<code>__proto__</code>）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象 ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2018/8/2/164f98b96cabcdd1?w=1674&amp;h=990&amp;f=png&amp;s=531913" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/JS里的数据类型转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1828,182 +1987,6 @@ align-items: center;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/HTTP协议/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/26/HTTP协议/" itemprop="url">HTTP协议</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T17:20:19+08:00">
-                2018-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p><strong>HTTP</strong>全称 <em>HyperText Transfer Protocol</em> <strong>即超文本传输协议</strong><br>是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP是万维网的数据通信的基础。</p>
-<p><strong>HTML</strong> 全称：<em>HyperText Markup Language</em> 即<strong>超文本标记语言</strong><br>是一种用于创建网页的标准标记语言。</p>
-<p><strong>URI</strong> 全称：<em>Uniform Resource Identifier</em>即<strong>统一资源标识符</strong></p>
-<p><strong>URI</strong>分为<strong>URL</strong>和<strong>URN</strong> 我们一般使用URL作为<strong>网址</strong></p>
-<p><strong>URN</strong>全称：<em>Uniform Resource Name</em> 即<strong>统一资源名称</strong><br>通过<strong>URN</strong>可以确定一个【唯一的】资源</p>
-<p><strong>URL</strong> 全称：<em>Uniform Resource Locator</em> 即<strong>统一资源定位符</strong><br>通过<strong>URL</strong>可以确定一个【唯一的】地址（网址）</p>
-<p>例如：<code>https://www.baidu.com/s?wd=hello&amp;rsv_spt=1#5</code> 就是一个 URL</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/23/1638c9eb2da7c13b?w=2298&amp;h=878&amp;f=png&amp;s=418072" alt=""></p>
-<h4 id="域名"><a href="#域名" class="headerlink" title="域名"></a>域名</h4><p>以<code>www.baidu.com</code>为例</p>
-<ul>
-<li><code>.com</code>或<code>.cn</code>或<code>.tt</code> 为一级域名（顶级域名）。</li>
-<li><code>baidu.com</code>为二级域名。</li>
-<li><code>www.baidu.com</code>为三级域名。</li>
-<li><code>www.baidu.com</code>和<code>baidu.com</code>共有一个二级域名。</li>
-</ul>
-<h4 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h4><p><strong>DNS</strong> 全称 <em>Domain Name System</em> 即<strong>网域名称系统</strong>。<br>它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。<strong>DNS</strong>使用<strong>TCP</strong>和<strong>UDP端口53</strong><br><strong>DNS</strong>会根据一个域名返回一个<strong>IP</strong><br>在本地设置hosts可以绕过<strong>DNS</strong>。使用命令<code>sudo vi /etc/hosts</code>设置。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/5/23/1638c9f5539c888f?w=1548&amp;h=720&amp;f=png&amp;s=291242" alt=""></p>
-<ul>
-<li>每一个电脑都有很多端口，每一个端口只做一件事情。从0到2048都是指定做某事情。80端口是用来服务HTTP协议的。</li>
-<li>浏览器负责发起请求</li>
-<li>服务器在80端口接受请求</li>
-<li>服务器负责返回内容</li>
-<li>浏览器负责下载相应内容</li>
-<li>HTTP的作用是指导浏览器和服务器如何进行沟通</li>
-</ul>
-<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>一个HTTP请求报文由请求行、请求头部、空行和请求数据4个部分组成<br>请求的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1 动词 路径 协议/版本</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Key3: value3</span><br><span class="line">2 Content-Type: application/x-www-form-urlencoded</span><br><span class="line">2 Host: www.baidu.com</span><br><span class="line">2 User-Agent: curl/7.54.0</span><br><span class="line">3 </span><br><span class="line">4 要上传的数据</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>请求最多包含四部分，最少包含三部分。（也就是说第四部分可以为空）</li>
-<li>第三部分永远都是一个回车（\n）</li>
-<li>动词有 GET POST PUT PATCH DELETE HEAD OPTIONS 等</li>
-<li>这里的路径包括「查询参数」，但不包括「锚点」</li>
-<li>如果你没有写路径，那么路径默认为 /</li>
-<li>第 2 部分中的 Content-Type 标注了第 4 部分的格式</li>
-</ol>
-<h4 id="用Chrome查看请求"><a href="#用Chrome查看请求" class="headerlink" title="用Chrome查看请求"></a>用Chrome查看请求</h4><ol>
-<li>在谷歌浏览器空白处单击右键，点击检查，打开<code>Network</code></li>
-<li>地址栏输入网址</li>
-<li>选中第一个请求</li>
-<li>查看<code>Request Headers</code>，点击<code>view source</code>将会看到请求的前两部分</li>
-<li>查看<code>FormData</code>或<code>Payload</code>将会看到请求的第四部分（如果有的话）</li>
-</ol>
-<h3 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h3><p>HTTP响应也由四个部分组成，分别是：状态行、消息报头、空行、响应正文。<br>响应的格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1 协议/版本号 状态码 状态解释</span><br><span class="line">2 Key1: value1</span><br><span class="line">2 Key2: value2</span><br><span class="line">2 Content-Length: 17931</span><br><span class="line">2 Content-Type: text/html</span><br><span class="line">3</span><br><span class="line">4 要下载的内容</span><br></pre></td></tr></table></figure></p>
-<p>响应示例<br>状态码是服务器对浏览器说的话</p>
-<ul>
-<li>1xx：指示信息–表示请求已接收，继续处理。</li>
-<li>2xx：成功–表示请求已被成功接收、理解、接受。</li>
-<li>3xx：重定向–要完成请求必须进行更进一步的操作。</li>
-<li>4xx：客户端错误–请求有语法错误或请求无法实现。</li>
-<li>5xx：服务器端错误–服务器未能实现合法的请求。</li>
-</ul>
-<h4 id="用Chrome查看响应"><a href="#用Chrome查看响应" class="headerlink" title="用Chrome查看响应"></a>用Chrome查看响应</h4><ol>
-<li>打开<code>Network</code></li>
-<li>输入网址</li>
-<li>选中第一个响应</li>
-<li>查看<code>Response Headers</code>，点击<code>view source</code>将会看到响应的前两部分</li>
-<li>查看<code>Response</code>或者<code>Preview</code>将会看到响应的第四部分。<h3 id="CURL"><a href="#CURL" class="headerlink" title="CURL"></a>CURL</h3>在Linux中curl是一个利用URL规则在命令行下工作的文件传输工具，可以说是一款很强大的http命令行工具。它支持文件的上传和下载，是综合传输工具，但按传统，习惯称url为下载工具。更多用法可以参考这篇<a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">网站</a></li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2058,7 +2041,7 @@ align-items: center;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

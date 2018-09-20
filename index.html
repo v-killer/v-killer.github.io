@@ -229,6 +229,157 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/JOSNP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/20/JOSNP/" itemprop="url">JOSNP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-20T23:14:20+08:00">
+                2018-09-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ol>
+<li>文件系统是一种数据库</li>
+<li>MySQL是一种数据库</li>
+</ol>
+<h3 id="局部刷新怎么做"><a href="#局部刷新怎么做" class="headerlink" title="局部刷新怎么做"></a>局部刷新怎么做</h3><p>方案一： 用图片造GET请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(<span class="string">'click'</span>, (e)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> image = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>)</span><br><span class="line">    image.src = <span class="string">'/pay'</span></span><br><span class="line">    image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 状态码是 200~299 则表示成功</span></span><br><span class="line">        alert(<span class="string">'成功'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    image.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 状态码大于等于 400 则表示失败</span></span><br><span class="line">        alert(<span class="string">'失败'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>后端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var amount = fs.readFileSync(&apos;./db&apos;,&apos;utf-8&apos;)</span><br><span class="line">var newAmount = amount - 1</span><br><span class="line">fs.writeFileSync(&apos;./db&apos;,newAmount)</span><br><span class="line">response.setHeader(&apos;Content-Type&apos;,&apos;image/jpg&apos;)</span><br><span class="line">response.statusCode = 200</span><br><span class="line">response.write(fs.readFileSync(&apos;./dog.jpg&apos;)) // 响应一个真图片欺骗浏览器</span><br><span class="line">response.end()</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>弊端：后台需要返回一个真的图片欺骗浏览器</li>
+</ul>
+<p>方案二： 用script造GET请求<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(<span class="string">'click'</span>, (e)=&gt;&#123;</span><br><span class="line">    <span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">    script.src = <span class="string">'/pay'</span></span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(script) <span class="comment">// 将script标签加入body,否则会加载失败</span></span><br><span class="line">    script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// 状态码是 200~299 则表示成功</span></span><br><span class="line">        e.currentTarget.remove()  <span class="comment">// 删掉这个script标签</span></span><br><span class="line">    &#125;</span><br><span class="line">    script.onload = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123; <span class="comment">// 状态码大于等于 400 则表示失败</span></span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>后端代码：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (path === <span class="string">'/pay'</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> amount = fs.readFileSync(<span class="string">'./db'</span>, <span class="string">'utf8'</span>) <span class="comment">// 读取db文件里的数据</span></span><br><span class="line">    amount -= <span class="number">1</span>  </span><br><span class="line">    fs.writeFileSync(<span class="string">'./db'</span>, amount) <span class="comment">// 将运算后amount的写入db文件</span></span><br><span class="line">    response.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/javascript'</span>)</span><br><span class="line">    response.write(<span class="string">'amount.innerText = amount.innerText - 1'</span>)</span><br><span class="line">    response.end()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种技术叫做<strong>SRJ</strong>： Server Rendered JavaScript</p>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>请求方：frank.com 的前端程序员（浏览器）<br>响应方：jack.com 的后端程序员（服务器）</p>
+<ol>
+<li>请求方创建 script，src 指向响应方，同时传一个查询参数 ?callbackName=yyy</li>
+<li>响应方根据查询参数callbackName，构造形如yyy.call(undefined, ‘你要的数据’)这样的响应</li>
+<li>浏览器接收到响应，就会执行 yyy.call(undefined, ‘你要的数据’)</li>
+<li>那么请求方就知道了他要的数据</li>
+</ol>
+<p>这就是JSONP，动态标签跨域请求技术。</p>
+<h3 id="方案三"><a href="#方案三" class="headerlink" title="方案三"></a>方案三</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">button.addEventListener(&apos;click&apos;, (e)=&gt;&#123;</span><br><span class="line">    let script = document.createElement(&apos;script&apos;)</span><br><span class="line">    let functionName = &apos;frank&apos;+ parseInt(Math.random()*10000000 ,10)</span><br><span class="line">    window[functionName] = function()&#123;  // 每次请求之前搞出一个随机的函数</span><br><span class="line">        amount.innerText = amount.innerText - 0 - 1</span><br><span class="line">    &#125;</span><br><span class="line">    script.src = &apos;/pay?callback=&apos; + functionName</span><br><span class="line">    document.body.appendChild(script)</span><br><span class="line">    script.onload = function(e)&#123; // 状态码是 200~299 则表示成功</span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] // 请求完了就干掉这个随机函数</span><br><span class="line">    &#125;</span><br><span class="line">    script.onload = function(e)&#123; // 状态码大于等于 400 则表示失败</span><br><span class="line">        e.currentTarget.remove()</span><br><span class="line">        delete window[functionName] // 请求完了就干掉这个随机函数</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>后端代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if (path === &apos;/pay&apos;)&#123;</span><br><span class="line">    let amount = fs.readFileSync(&apos;./db&apos;, &apos;utf8&apos;)</span><br><span class="line">    amount -= 1</span><br><span class="line">    fs.writeFileSync(&apos;./db&apos;, amount)</span><br><span class="line">    let callbackName = query.callback</span><br><span class="line">    response.setHeader(&apos;Content-Type&apos;, &apos;application/javascript&apos;)</span><br><span class="line">    response.write(`</span><br><span class="line">        $&#123;callbackName&#125;.call(undefined, &apos;success&apos;)</span><br><span class="line">    `)</span><br><span class="line">    response.end()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> JSONP的一些约定</p>
+<ul>
+<li>callbackName约定写成callback</li>
+<li>函数名yyy写成一个随机数frank1231321564()</li>
+</ul>
+<p>终极方案，用jQuery写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">url: &quot;http://jack.com:8002/pay&quot;,</span><br><span class="line">dataType: &quot;jsonp&quot;,</span><br><span class="line">success: function( response ) &#123;</span><br><span class="line">    if(response === &apos;success&apos;)&#123;</span><br><span class="line">    amount.innerText = amount.innerText - 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">$.jsonp()</span><br></pre></td></tr></table></figure></p>
+<h4 id="JOSNP为什么不支持POST请求"><a href="#JOSNP为什么不支持POST请求" class="headerlink" title="JOSNP为什么不支持POST请求"></a>JOSNP为什么不支持POST请求</h4><ol>
+<li>因为是JOSNP通过动态创建script实现的</li>
+<li>动态创建script的时候只能用get,不能用post</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/如何实现页面内跳转/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1779,165 +1930,6 @@ overflow: hidden;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/JS对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/01/JS对象/" itemprop="url">JS对象</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T14:05:43+08:00">
-                2018-09-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="全局对象window"><a href="#全局对象window" class="headerlink" title="全局对象window"></a>全局对象window</h3><h4 id="window的属性"><a href="#window的属性" class="headerlink" title="window的属性"></a>window的属性</h4><h3 id="1-ECMAScript规定的属性"><a href="#1-ECMAScript规定的属性" class="headerlink" title="1. ECMAScript规定的属性"></a>1. ECMAScript规定的属性</h3><ul>
-<li>parseInt</li>
-<li>parseFloat</li>
-<li>Number()<br>我们有两种方法可以声明一个Number<br><code>var n1 = 1; // 声明一个数字1</code><br><code>var n2 = new Number(1); // 声明一个Number对象,对象的数字值是1</code><br>区别在于对象1有很多方法可以调用，如<code>toSring</code>、<code>valueof</code>等，数字1则没有。<br>但是在实际应用中我们发现即使声明一个数字1，我们同样可以使用<code>toString</code>方法，<br>这是因为当使用数字1的<code>toString</code>方法时，JS会声明一个临时的对象<code>temp = new Number(n1)</code>,将<code>temp.toString</code>的值作为<code>n1.toString</code>的值，然后把<code>temp</code>干掉。</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/7/22/164bec805719e140?w=263&amp;h=165&amp;f=png&amp;s=4027" alt=""></p>
-<ul>
-<li>String()<br>同样我们有两种方法可以声明一个String<br><code>var s1 =&#39;abc&#39; // 声明一个基本类型的字符串</code><br><code>var s2 = new String(&#39;abc&#39;) // 声明一个String对象,这个对象看起来像数组但不是数组,它只是一个hash</code></li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/7/22/164bed06c64c8cbe?w=388&amp;h=190&amp;f=png&amp;s=8829" alt=""><br><strong>String的一些方法</strong></p>
-<ol>
-<li><code>charAt</code>方法从一个字符串中返回指定的字符<br>语法：<code>string.charAt(index)</code></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f535a75de950d?w=235&amp;h=115&amp;f=png&amp;s=2396" alt=""></p>
-<ol start="2">
-<li><code>charCodeAt</code>方法根据索引获取某一个字符的编码<br>语法:<code>string.charCodeAt()</code></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f538b883bf1d9?w=230&amp;h=140&amp;f=png&amp;s=2138" alt=""></p>
-<ol start="3">
-<li><code>trim</code>方法会从一个字符串的两端删除空白字符。<br>语法：<code>string.trim()</code><br><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f540ab9fa171d?w=353&amp;h=96&amp;f=png&amp;s=1470" alt=""></li>
-<li><code>concat</code>方法将一个或多个字符串与原字符串合并。<br>语法：<code>string.concat(string2,string3)</code></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f545e5b53435b?w=214&amp;h=180&amp;f=png&amp;s=3172" alt=""><br><code>replace</code></p>
-<ul>
-<li>Boolean()<br>同样我们有两种方法可以声明一个Boolean<br><code>var b1 = true</code><br><code>var b2 = new Boolean(true)</code><br>注意：false对象的布尔值是true<br><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f5572b9adf049?w=249&amp;h=131&amp;f=png&amp;s=3348" alt=""></li>
-<li>Object()<br>同样我们有两种方法声明一个对象<br><code>var o1 = {}</code><br><code>var o2 = new object()</code><br>两种方法并没有什么区别，但是o1并不严格相等o2，这是因为内存不同</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/1/164f55db07364eab?w=285&amp;h=200&amp;f=png&amp;s=3777" alt=""></p>
-<ul>
-<li>setTimeout(function(){},5)<h3 id="2-浏览器私有的属性-Chrome-Firefox"><a href="#2-浏览器私有的属性-Chrome-Firefox" class="headerlink" title="2. 浏览器私有的属性(Chrome/Firefox)"></a>2. 浏览器私有的属性(Chrome/Firefox)</h3></li>
-<li>alert(弹框提示)</li>
-<li>prompt(用户填写)</li>
-<li>confirm(确认)</li>
-<li>console(开发者)</li>
-<li>document(文档)</li>
-</ul>
-<hr>
-<h3 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h3><p>我们创建的每个函数的都有一个prototype(原型)属性，这个属性是一个指针(内存地址)，指向一个对象(原型对象)。<br>这个对象(原型对象)的用途是包含可以由特定类型的所有实例共享的属性和方法。<br><img src="https://user-gold-cdn.xitu.io/2018/8/2/164f97a098109635?w=590&amp;h=512&amp;f=jpeg&amp;s=21422" alt=""></p>
-<h3 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h3><p>每个实例对象（object ）都有一个私有属性（称之为<code>__proto__</code>）指向它的原型对象（prototype）。该原型对象也有一个自己的原型对象 ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/2/164f98b96cabcdd1?w=1674&amp;h=990&amp;f=png&amp;s=531913" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1992,7 +1984,7 @@ overflow: hidden;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
