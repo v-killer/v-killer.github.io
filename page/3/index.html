@@ -229,6 +229,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/27/HTML/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/27/HTML/" itemprop="url">HTML</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T15:11:19+08:00">
+                2018-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="w3c"><a href="#w3c" class="headerlink" title="w3c"></a>w3c</h2><p>万维网联盟（World Wide Web Consortium，W3C），又称W3C理事会，是万维网的主要国际标准组织,<br>由蒂姆·伯纳斯-李于1994年10月离开欧洲核子研究中心（CERN）后成立。</p>
+<h3 id="李爵士"><a href="#李爵士" class="headerlink" title="李爵士"></a>李爵士</h3><p>蒂莫西·约翰·伯纳斯-李爵士英语：Sir Timothy John Berners-Lee，英国计算机科学家。他是万维网的发明者。1990年12月25日，他成功利用互联网实现了HTTP客户端与服务器的第一次通讯。</p>
+<h3 id="MDN"><a href="#MDN" class="headerlink" title="MDN"></a>MDN</h3><p>MDN Web Docs是一个汇集众多Mozilla基金会产品和网络技术开发文档的免费网站。</p>
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><ol>
+<li><h4 id="HTML的版本（W3C组织制定规范）"><a href="#HTML的版本（W3C组织制定规范）" class="headerlink" title="HTML的版本（W3C组织制定规范）"></a>HTML的版本（W3C组织制定规范）</h4><p> ①.HTML4.01</p>
+<p> ②.XHTML</p>
+<p> ③.HTML5</p>
+<p> ④HTML5.1</p>
+</li>
+<li><h4 id="规范文档-Specifications"><a href="#规范文档-Specifications" class="headerlink" title="规范文档(Specifications)"></a>规范文档(Specifications)</h4><p> ①.由W3C写文档（李爵士）</p>
+<p> ②.W3C根据浏览器的实际情况总结文档，并不是凭空想象</p>
+</li>
+<li><h4 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a>DOCTYPE</h4><p> ①.用来选择文档类型</p>
+<p> ②.除了HTML5的DOCTYPE，其他的都很难记：<a href="https://www.w3.org/QA/2002/04/valid-dtd-list.html" target="_blank" rel="noopener">查看其他的DOTCYPE</a></p>
+<p> ③.如果你没写DOCTYPE,那你就惨了</p>
+</li>
+<li><h4 id="省略标签"><a href="#省略标签" class="headerlink" title="省略标签"></a>省略标签</h4><p> ①head、body、html标签可省略（如果标签为空）</p>
+<p> ②浏览器会自动补上省略的标签</p>
+</li>
+<li><h4 id="如何查看MDN文档"><a href="#如何查看MDN文档" class="headerlink" title="如何查看MDN文档"></a>如何查看MDN文档</h4><p> ①Googel：关键词+MDN</p>
+<p> ②切换成中文</p>
+</li>
+<li><h4 id="空元素"><a href="#空元素" class="headerlink" title="空元素"></a>空元素</h4><p> 一个空元素（empty element）可能是 HTML，SVG，或者 MathML 里的一个不可能存在子节点（例如内嵌的元素或者元素内的文本）的element。</p>
+<p> 在 HTML 中，通常在一个空元素上使用一个闭标签是无效的。</p>
+<p> 在 HTML 中有以下这些空元素：<code>&lt;area&gt;</code> <code>&lt;base&gt;</code> <code>&lt;br&gt;</code> <code>&lt;col&gt;</code> <code>&lt;command&gt;</code> <code>&lt;embed&gt;</code> <code>&lt;hr&gt;</code> <code>&lt;img&gt;</code> <code>&lt;input&gt;</code> <code>&lt;keygen&gt;</code> <code>&lt;link&gt;</code> <code>&lt;meta&gt;</code> <code>&lt;param&gt;</code> <code>&lt;source&gt;</code> <code>&lt;track&gt;</code> <code>&lt;wbr&gt;</code></p>
+</li>
+<li><h4 id="可替换元素"><a href="#可替换元素" class="headerlink" title="可替换元素"></a>可替换元素</h4><p> CSS 里，可替换元素（replaced element）的展现不是由CSS来控制的。这些元素是一类 外观渲染独立于CSS的 外部对象。<br> 典型的可替换元素有 <code>&lt;img&gt;</code>、 <code>&lt;object&gt;</code>、 <code>&lt;video&gt;</code> 和 表单元素，如<code>&lt;textarea&gt;</code>、 <code>&lt;input&gt;</code> 。 </p>
+<p> 某些元素只在一些特殊情况下表现为可替换元素，例如 <code>&lt;audio&gt;</code> 和 <code>&lt;canvas&gt;</code> 。 通过 CSS content 属性来插入的对象 被称作 匿名可替换元素（anonymous replaced elements）。</p>
+<p> CSS在某些情况下会对可替换元素做特殊处理，比如计算外边距和一些auto值。</p>
+<p> 需要注意的是，一部分（并非全部）可替换元素，本身具有尺寸和基线（baseline），会被像vertical-align之类的一些 CSS 属性用到。</p>
+</li>
+<li>命令 <code>whois</code> 可以查看某个域名拥有者的身份</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/HTTP协议/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -648,7 +800,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

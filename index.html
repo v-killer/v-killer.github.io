@@ -229,6 +229,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/23/AJAX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/23/AJAX/" itemprop="url">AJAX</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T22:39:47+08:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="AJAX的所有功能"><a href="#AJAX的所有功能" class="headerlink" title="AJAX的所有功能"></a>AJAX的所有功能</h3><hr>
+<ul>
+<li>客户端的JS发起请求(浏览器上)</li>
+<li>服务端的JS发送响应(node.js上)</li>
+<li>JS可以设置任意请求header  <ul>
+<li>设置请求的第一部分 <code>request.open(&#39;get&#39;,&#39;/xxx&#39;)</code></li>
+<li>设置请求的第二部分 <code>request.setHeader(&#39;content-type,&#39;x-www-form-urlencoded&#39;)</code></li>
+<li>设置请求的第四部分 <code>request.send(&#39;a=1&amp;b=2&#39;)</code></li>
+</ul>
+</li>
+<li>JS可以获取任意响应header<ul>
+<li>获取响应的第一部分 <code>request.staus/request.statusText</code></li>
+<li>获取响应的第二部分 <code>request.getResponseHeader()/request.getAllResponseHeaders()</code></li>
+<li>获取响应的第四部分 <code>request.responseText</code></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/20/JOSNP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1726,210 +1862,6 @@ for (let i = 0; i &lt; aTags.length; i++) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/CSS盒模型详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/03/CSS盒模型详解/" itemprop="url">CSS盒模型详解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T18:06:59+08:00">
-                2018-09-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><hr>
-<p>盒模型(框模型)是网页布局的基础，每个元素都被表示为一个矩形的方框。</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/1650982825a61d9e?w=967&amp;h=720&amp;f=png&amp;s=9673" alt=""></p>
-<ul>
-<li><p><code>width</code>和<code>height</code>设置内容框(content box)的宽度和高度。</p>
-<blockquote>
-<p>使用<code>min-width</code>、<code>min-height</code>、<code>max-width</code>、<code>max-height</code>可以设置最大(小)宽度和高度,优点是当页面放大或缩小时，内容框会自动适应页面。</p>
-</blockquote>
-</li>
-<li><p><code>padding</code>表示css框的内边距。</p>
-</li>
-<li><code>border</code>表示css框的边界,也就是边框。<code>border-width</code>、<code>border-color</code>分别设置边框的厚度和颜色。</li>
-<li><code>margin</code>表示css框的外边距。<h3 id="外边距合并-折叠"><a href="#外边距合并-折叠" class="headerlink" title="外边距合并(折叠)"></a>外边距合并(折叠)</h3>块级元素的上外边距和下外边距有时会合并(折叠)为一个外边距，其大小取其中最大者。</li>
-<li>相邻元素之间：毗邻的两个元素之间的外边距会合并。  </li>
-<li>父元素与其第一个或最后一个子元素之间:如果父元素与其第一个(最后一个)子元素之间不存在边框，内边距，行内内容，那么这两对外边距之间会产生合并，此时子元素的外边距会”溢出”到父元素的外面。  </li>
-<li>空的块级元素：如果一个块级元素内不包含任何内容，则该元素的上下外边距会合并。<blockquote>
-<p>使用<code>overflow: hidden;</code>可以避免外边距合并，但是不建议这样做。建议加padding。</p>
-</blockquote>
-<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h3><code>box-sizing</code>属性用于更改用于计算元素宽度和高度的默认的CSS盒子模型。</li>
-<li><code>content-box</code>:默认值，标准盒模型。width和height只包括内容的宽高。<br>width/height = 内容的宽度/高度</li>
-<li><code>border-box</code>:IE盒模型。width和height包括内容、内边距和边框。(如果想要使一个框占窗口的50%可以使用<code>border-box</code>)<br>width/height = border + padding + 内容的宽度/高度</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/165099c69a923a3c?w=967&amp;h=719&amp;f=png&amp;s=9653" alt=""></p>
-<h3 id="display"><a href="#display" class="headerlink" title="display"></a>display</h3><hr>
-<p><code>display</code>属性指定用于元素的呈现框的类型</p>
-<ul>
-<li><code>block</code>(块框):定义为堆放在其他框上的框（例如：其内容会独占一行），可以设置它的宽高。</li>
-<li><code>inline</code>(行内框):与块框是相反的，它随着文档的文字（例如：它将会和周围的文字和其他行内元素出现在同一行，而且它的内容会像一段中的文字一样随着文字部分的流动而打乱），对行内盒设置宽高无效。</li>
-<li><code>inline-block</code>(行内块状框):像是上述两种的集合：它不会重新另起一行但会像行内框一样随着周围文字而流动，它能够设置宽高，并且像块框一样保持了其块特性的完整性，它不会在段落行中断开。（在下面的示例中，行内块状框会放在第二行文本上，因为第一行没有足够的空间，并且不会突破两行。然而，如果没有足够的空间，行内框会在多条线上断裂，而它会失去一个框的形状。）</li>
-</ul>
-<h3 id="溢出"><a href="#溢出" class="headerlink" title="溢出"></a>溢出</h3><hr>
-<p><strong>overflow</strong>:当你使用绝对的值设置了一个框的大小（如，固定像素的宽/高），允许的大小可能不适合放置内容，这种情况下内容会从盒子溢流。我们使用<code>overflow</code>属性来控制这种情况的发生。</p>
-<ul>
-<li><code>auto</code>：当内容过多，溢流的内容被隐藏，然后出现滚动条来让我们滚动查看所有的内容。</li>
-<li><code>hidden</code>:当内容过多，溢流的内容被隐藏。</li>
-<li><code>visible</code>:默认值，当内容过多，溢流的内容被显示在盒子的外边。</li>
-</ul>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/16509a51ed00a7e8?w=675&amp;h=402&amp;f=png&amp;s=26076" alt=""></p>
-<h3 id="文字溢出省略"><a href="#文字溢出省略" class="headerlink" title="文字溢出省略"></a>文字溢出省略</h3><ul>
-<li><p>单行文字<br><code>white-space: nowrap</code>:文本内的换行符无效(使文字显示在一行)  </p>
-<pre><code>text-overflow: ellipsis:   //多出的文本变为省略号
-overflow: hidden;
-</code></pre></li>
-<li><p>多行文字</p>
-<pre><code>div{
-    display: -webkit-box;
-    -webkit-line-clamp: 2;//第几行省略
-    -webkit-box-orient: vertical;
-}
-</code></pre></li>
-</ul>
-<h3 id="文字两端对齐"><a href="#文字两端对齐" class="headerlink" title="文字两端对齐"></a>文字两端对齐</h3><p>如果想要使[姓名]和[联系方式]两端对齐，呈现这样的效果:</p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/5/16509d73c05fc08d?w=336&amp;h=99&amp;f=png&amp;s=1583" alt=""><br>代码如下：    </p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;title&gt;JS Bin&lt;/title&gt;
-  &lt;style&gt;
-    span{
-      display: inline-block;
-      width: 4em;
-      text-align: justify;
-    }
-    span::after{
-      content: &apos;&apos;;
-      display: inline-block;
-      width: 100%;
-    }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div&gt;
-    &lt;span&gt;姓名&lt;/span&gt;&lt;br/&gt;
-    &lt;span&gt;联系方式&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><h3 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h3><hr>
-<p>文档流：文档内元素流动的方向。</p>
-<ul>
-<li>内联元素从左向右流动，如果遇到阻碍(宽度不够)，则换行继续流动。</li>
-<li>如果一个英文单词很长，那么它不会换行，使用<code>word-break: break-all</code>可使其换行。(或者使用连字符<code>-</code>)</li>
-<li>块级元素每一个元素都占据一行，从上向下流动。如下图所示：<br><img src="https://user-gold-cdn.xitu.io/2018/8/5/1650a2e91a341891?w=1727&amp;h=657&amp;f=png&amp;s=252910" alt=""></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1984,7 +1916,7 @@ overflow: hidden;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
