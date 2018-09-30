@@ -229,6 +229,158 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/如何制作一个icon/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/04/如何制作一个icon/" itemprop="url">如何制作一个icon</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T14:47:14+08:00">
+                2018-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>img法</p>
+<hr>
+<p><code>&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;</code><br><strong>PSD文件</strong>: ps如何裁剪出一个icon?<br>右键点击该图层，选择复制图层，在新出对话框里选择new（新建）<br><img src="https://user-gold-cdn.xitu.io/2018/8/6/1650ea49bd6b392e?w=308&amp;h=274&amp;f=png&amp;s=87519" alt=""><br>我们得到一个只有该图层的图片，然后点击image选择trim<br><img src="https://user-gold-cdn.xitu.io/2018/8/6/1650ea76b7dca541?w=227&amp;h=334&amp;f=png&amp;s=57825" alt=""><br>ok,切完啦。</p>
+</li>
+<li><p>background法  </p>
+</li>
+</ol>
+<hr>
+<p>CSS代码：</p>
+<pre><code>.icon{
+    display: inline-block;
+    background: transparent no-repeat 0 0;
+    background-image: url(./xxx.png)
+}
+</code></pre><ol start="3">
+<li>background合一法(雪碧图)</li>
+</ol>
+<hr>
+<ul>
+<li>其实和第二种方法原理一样，只是将多张图片合成一张图片，然后每张图片只显示需要显示的部分，这样可以优化加载速度。</li>
+<li>这里推荐一个自动生成雪碧图的<a href="http://css.spritegen.com/" target="_blank" rel="noopener">网站</a></li>
+</ul>
+<ol start="4">
+<li>iconfont</li>
+</ol>
+<hr>
+<p><a href="https://iconfont.cn" target="_blank" rel="noopener">阿里巴巴图标库</a>一个有很多矢量icon的地方<br>三种引用方法,具体看<a href="http://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d8cf4382a&amp;helptype=code" target="_blank" rel="noopener">帮助文档</a></p>
+<ul>
+<li>html(unicode引用)</li>
+<li>css(font-class引用)</li>
+<li>js(symbol引用)</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/CSS层叠顺序与层叠上下文/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1874,188 +2026,6 @@ align-items: center;
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/HTML常见标签详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/28/HTML常见标签详解/" itemprop="url">HTML常见标签详解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T14:25:13+08:00">
-                2018-08-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p><strong>嵌套页面</strong></p>
-<p><code>&lt;iframe src=&quot;https://www.baidu.com&quot; name=&quot;xxx&quot;&gt;&lt;iframe&gt;</code></p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>height</code>以像素格式指定frame的高度</li>
-<li><code>width</code>以百分比格式指定frame的宽度</li>
-<li><code>frameborder</code>取值为1时（默认值），告诉浏览器在当前iframe与其他iframe之间绘制边框，取0时则无需绘制此边框。（一般写做<code>frameborder=&quot;0&quot;</code>）</li>
-<li><code>name</code>嵌入的浏览上下文框架的名称。该名称可以用作<code>&lt;a&gt;</code>标签,<code>&lt;form&gt;</code>标签的target属性值，或<code>&lt;input&gt;</code> 标签和 <code>&lt;button&gt;</code>标签的formtaget属性值</li>
-<li><code>src</code>嵌套页面的URL地址。（支持相对路径）</li>
-</ol>
-<h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>跳转页面(HTTP GET 请求)</p>
-<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>target</code>属性</li>
-</ol>
-<p>该属性指定在何处显示链接的资源。 取值为标签（tab），窗口（window），或框架（iframe）等浏览上下文的名称或其他关键词。以下关键字具有特殊的意义:</p>
-<ul>
-<li><code>_blank</code>新窗口打开</li>
-<li><code>_self</code>当前页面加载</li>
-<li><code>_parent</code>加载响应到当前框架的HTML4父框架或当前的HTML5浏览上下文的父浏览上下文。</li>
-<li><code>_top</code>加载响应进入顶层浏览上下文</li>
-</ul>
-<ol start="2">
-<li><code>download</code>属性</li>
-</ol>
-<p>此属性指示浏览器下载URL而不是导航到URL，因此将提示用户将其保存为本地文件。如果http响应的Content-type写成<code>Content-type: application/octet-stream</code>那么浏览器就会以下载的形式接受请求（无需使用download属性）</p>
-<ol start="3">
-<li><code>href</code>属性</li>
-</ol>
-<ul>
-<li><code>&lt;a href=&quot;//qq.com&quot;&gt;&lt;/a&gt;</code>a标签的无协议绝对地址，当前页面是什么协议，跳转页面是什么协议。</li>
-<li><code>&lt;a href=&quot;#xxx&quot;&gt;&lt;/a&gt;</code>页面内跳转（不发起请求,除了锚点其余均发起请求)可以使用<code>href=&quot;#&quot;</code>或<code>href=&quot;#&quot;</code>链接返回页面顶部。</li>
-<li><code>&lt;a href=?name=xxx&gt;&lt;/a&gt;</code>浏览器发起<code>?name=xxx</code>的请求</li>
-<li><code>&lt;a href=./xxx.html&gt;&lt;/a&gt;</code></li>
-<li><code>&lt;a href=&quot;javascript: alert(1);&quot;&gt;&lt;/a&gt;</code>伪协议。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　如果要写一个点击后不会跳转的ａ标签，可以写为<code>&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;</code></li>
-</ul>
-<h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><p>跳转页面(HTTP POST 请求)</p>
-<ul>
-<li>如果form表单里面没有提交按钮，就无法提交form。（除非你用JS）</li>
-</ul>
-<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>method</code></li>
-</ol>
-<ul>
-<li><code>post</code>:指的是HTTP，表单数据会包含在表单体内然后发送给服务器。</li>
-<li><code>get</code>:表单数据会附加在 <code>action</code> 属性的URI中，并以 ‘?’ 作为分隔符, 然后这样得到的 URI 再发送给服务器。</li>
-</ul>
-<p><code>action</code>  一个处理这个form信息的程序所在的URL。</p>
-<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p><code>&lt;input&gt;</code> 元素用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。</p>
-<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>type</code> 控件类型的显示。如果这个属性没有指定，默认的类型是 text。可用的值包括：</li>
-</ol>
-<ul>
-<li><code>submit</code>:用于提交表单的按钮</li>
-<li><code>button</code>无缺省行为按钮</li>
-<li><code>checkbox</code>:复选框。（多个复选框需要给同一个name）</li>
-<li><code>radio</code>:单选按钮。（多个单选按钮需要给同一个name,否则可以同时选中）<h3 id="button标签"><a href="#button标签" class="headerlink" title="button标签"></a>button标签</h3></li>
-</ul>
-<h4 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>type</code> button的类型。可选值:</li>
-</ol>
-<ul>
-<li><code>submit</code>:此按钮提交表单数据给服务器。<strong>未指定时，此值为默认值</strong><h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3>它通常关联一个控件，或者是将控件放置在label元素内</li>
-</ul>
-<p><code>&lt;label&gt;用户名&lt;input type=&quot;text name=&quot;xxx&quot;&gt;&lt;/label&gt;</code></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2110,7 +2080,7 @@ align-items: center;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
