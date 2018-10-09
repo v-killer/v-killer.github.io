@@ -229,6 +229,173 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/深入HTTP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="剑指天涯心有梦">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/default_avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Study Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/09/深入HTTP/" itemprop="url">深入HTTP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T13:09:50+08:00">
+                2018-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><blockquote>
+<p>Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。</p>
+</blockquote>
+<ol>
+<li>服务器通过 <code>Set-Cookie</code> 头给客户端一串字符串</li>
+<li>客户端每次访问相同域名的网页时，必须带上这段字符串</li>
+<li>客户端要在一段时间内保存这个Cookie</li>
+<li>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间</li>
+<li>大小大概在 4kb 以内</li>
+</ol>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><ol>
+<li>将<code>SessionID</code>（随机数）通过 Cookie 发给客户端</li>
+<li>客户端访问服务器时，服务器读取 <code>SessionID</code></li>
+<li>服务器有一块内存（哈希表）保存了所有 session</li>
+<li>通过 <code>SessionID</code> 我们可以得到对应用户的隐私信息，如 id、email</li>
+<li>这块内存（哈希表）就是服务器上的所有 session</li>
+</ol>
+<h3 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h3><ol>
+<li>LocalStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 LocalStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 LocalStorage（没有同源那么严格）</li>
+<li>每个域名 localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）</li>
+<li>常用场景：记录有没有提示过用户（没有用的信息，不能记录密码）</li>
+<li>LocalStorage 永久有效，除非用户清理缓存</li>
+</ol>
+<h3 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h3><ol>
+<li>SessionStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 SessionStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 SessionStorage（没有同源那么严格）</li>
+<li>每个域名 SessionStorage 最大存储量为 5Mb 左右（每个浏览器不一样）</li>
+<li>SessionStorage在用户关闭页面（结束会话）后就失效</li>
+</ol>
+<h3 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h3><blockquote>
+<p><code>Cache-Control</code> 通用消息头被用于在http 请求和响应中通过指定指令来实现缓存机制。缓存指令是单向的, 这意味着在请求设置的指令，在响应中不一定包含相同的指令。</p>
+</blockquote>
+<p>设置Cookie过期时间,两种方法</p>
+<ol>
+<li><code>Cache-Control: max-age=&lt;seconds&gt;</code>多少秒之后，Cookie过期(现在常用)</li>
+<li><code>Expires: Wed, 21 Oct 2015 07:28:00 GMT</code>格林尼治时间xxxx，Cookie过期（以前的用法，现在不常用）</li>
+</ol>
+<h3 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h3><blockquote>
+<p><code>ETag</code>HTTP响应头是资源的特定版本的标识符。这可以让缓存更高效，并节省带宽，因为如果内容没有改变，Web服务器不需要发送完整的响应。而如果内容发生了变化，使用ETag有助于防止资源的同时更新相互覆盖（“空中碰撞”）。</p>
+</blockquote>
+<p>区别：</p>
+<ul>
+<li>Cache-Control 直接不发请求。</li>
+<li>ETag 要发请求才行。（得到304）</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/MVC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1668,208 +1835,6 @@ for (let i = 0; i &lt; aTags.length; i++) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/04/DOM解析/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="剑指天涯心有梦">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/default_avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Study Notes">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/04/DOM解析/" itemprop="url">DOM解析</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-04T14:48:29+08:00">
-                2018-09-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="DOM是啥？"><a href="#DOM是啥？" class="headerlink" title="DOM是啥？"></a>DOM是啥？</h3><hr>
-<p>MDN是这样解释的:</p>
-<blockquote>
-<p>文档对象模型 (DOM) 是HTML和XML文档的编程接口。它提供了对文档的结构化的表述，并定义了一种方式可以使从程序中对该结构进行访问，从而改变文档的结构，样式和内容。DOM将文档解析为一个由节点(node)和对象（包含属性和方法的对象）组成的结构集合。简言之，它会将web页面和脚本或程序语言连接起来。</p>
-</blockquote>
-<p>OK,翻译成人话就是，本来我们是不能用JS操作html页面的，因为页面只是文本，浏览器将html页面变成DOM，内容没有变，形式变成了对象,我们就可以用JS操作他了。web页面和DOM是一个东西，但是表现形式不同。就像水和冰，一个是文档一个是文档对象模型(DOM)。  </p>
-<h3 id="DOM都有啥？"><a href="#DOM都有啥？" class="headerlink" title="DOM都有啥？"></a>DOM都有啥？</h3><hr>
-<p>web页面被浏览器解析成了这样(DOM树)：<br><img src="https://user-gold-cdn.xitu.io/2018/8/25/16571a363c14f586?w=486&amp;h=266&amp;f=gif&amp;s=3238" alt=""><br>图中的每一个方框就是一个节点(node)，我们的html文档有文字，标签，注释等等，所以节点(node)也分成了不同的类型。<br>下面是一些常用类型和他们的属性</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>nodeType</th>
-<th>nodeName</th>
-<th>nodeValuie</th>
-<th>parentNode</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Element</td>
-<td>1</td>
-<td>元素标签名</td>
-<td>null</td>
-<td>Document或Element</td>
-</tr>
-<tr>
-<td>Text</td>
-<td>3</td>
-<td>#text</td>
-<td>文本内容</td>
-<td>Element</td>
-</tr>
-<tr>
-<td>Attr</td>
-<td>2</td>
-<td>特性的名称</td>
-<td>特性的值</td>
-<td>null</td>
-</tr>
-<tr>
-<td>Comment</td>
-<td>8</td>
-<td>#comment</td>
-<td>注释的内容</td>
-<td>Document或Element</td>
-</tr>
-<tr>
-<td>Document</td>
-<td>9</td>
-<td>#document</td>
-<td>null</td>
-<td>null</td>
-</tr>
-<tr>
-<td>DocumentFragment</td>
-<td>11</td>
-<td>#document-fragment</td>
-<td>null</td>
-<td>null</td>
-</tr>
-</tbody>
-</table>
-<h3 id="DOM能干啥？"><a href="#DOM能干啥？" class="headerlink" title="DOM能干啥？"></a>DOM能干啥？</h3><hr>
-<p>我们使用API来操作DOM，改变文档的结构、样式和内容。所谓操作无外乎增删改查。</p>
-<ol>
-<li><strong>增</strong></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/1657567b6f226a7d?w=450&amp;h=463&amp;f=png&amp;s=15136" alt=""></p>
-<ol start="2">
-<li><strong>删</strong></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/16575683b140c0d8?w=450&amp;h=186&amp;f=png&amp;s=4813" alt=""></p>
-<ol start="3">
-<li><strong>改</strong></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/1657568c2f7cfa99?w=450&amp;h=159&amp;f=png&amp;s=5835" alt=""></p>
-<ol start="4">
-<li><strong>查</strong></li>
-</ol>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/1657569505d1d8be?w=450&amp;h=413&amp;f=png&amp;s=18536" alt=""></p>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/26/165756c8a553154d?w=496&amp;h=858&amp;f=png&amp;s=22168" alt=""></p>
-<p>最后附上一篇博客，里面有对这些API更详细的解释<a href="http://luopq.com/2015/11/30/javascript-dom/" target="_blank" rel="noopener">DOM常用API总结</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1924,7 +1889,7 @@ for (let i = 0; i &lt; aTags.length; i++) {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

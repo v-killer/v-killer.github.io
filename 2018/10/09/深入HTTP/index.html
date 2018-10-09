@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="如何声明一个函数JavaScript有五种方法声明一个函数 1.  function命令 function声明的代码区块，就是一个函数。function后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。123function f(x,y)&amp;#123;    return x+y&amp;#125;  2,3. 函数表达式 除了function命令声明函数，还可以采用变量赋值">
+<meta name="description" content="Cookie Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。   服务器通过 Set-Cookie 头给客户端一串字符串 客户端每次访问相同域名的网页时，必须带上这段字符串 客户端要在一段时间内保存这个Cookie Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS函数">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/JS函数/index.html">
+<meta property="og:title" content="深入HTTP">
+<meta property="og:url" content="http://yoursite.com/2018/10/09/深入HTTP/index.html">
 <meta property="og:site_name" content="Study Notes">
-<meta property="og:description" content="如何声明一个函数JavaScript有五种方法声明一个函数 1.  function命令 function声明的代码区块，就是一个函数。function后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。123function f(x,y)&amp;#123;    return x+y&amp;#125;  2,3. 函数表达式 除了function命令声明函数，还可以采用变量赋值">
+<meta property="og:description" content="Cookie Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。   服务器通过 Set-Cookie 头给客户端一串字符串 客户端每次访问相同域名的网页时，必须带上这段字符串 客户端要在一段时间内保存这个Cookie Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/8/28/16580d83c31f18e4?w=888&h=790&f=png&s=132217">
-<meta property="og:updated_time" content="2018-09-10T13:33:44.093Z">
+<meta property="og:updated_time" content="2018-10-09T05:10:22.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS函数">
-<meta name="twitter:description" content="如何声明一个函数JavaScript有五种方法声明一个函数 1.  function命令 function声明的代码区块，就是一个函数。function后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。123function f(x,y)&amp;#123;    return x+y&amp;#125;  2,3. 函数表达式 除了function命令声明函数，还可以采用变量赋值">
-<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/8/28/16580d83c31f18e4?w=888&h=790&f=png&s=132217">
+<meta name="twitter:title" content="深入HTTP">
+<meta name="twitter:description" content="Cookie Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。   服务器通过 Set-Cookie 头给客户端一串字符串 客户端每次访问相同域名的网页时，必须带上这段字符串 客户端要在一段时间内保存这个Cookie Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/JS函数/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/09/深入HTTP/"/>
 
 
 
 
 
-  <title>JS函数 | Study Notes</title>
+  <title>深入HTTP | Study Notes</title>
   
 
 
@@ -234,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/JS函数/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/09/深入HTTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -251,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS函数</h1>
+          <h1 class="post-title" itemprop="name headline">深入HTTP</h1>
         
 
         <div class="post-meta">
@@ -263,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-10T21:33:19+08:00">
-                2018-09-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-09T13:09:50+08:00">
+                2018-10-09
               </time>
             
 
@@ -301,35 +299,54 @@
       
 
       
-        <h2 id="如何声明一个函数"><a href="#如何声明一个函数" class="headerlink" title="如何声明一个函数"></a>如何声明一个函数</h2><p>JavaScript有五种方法声明一个函数</p>
-<h3 id="1-function命令"><a href="#1-function命令" class="headerlink" title="1.  function命令"></a>1.  function命令</h3><blockquote>
-<p><code>function</code>声明的代码区块，就是一个函数。<code>function</code>后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3><blockquote>
+<p>Cookie 是服务器保存在浏览器的一小段文本信息，每个 Cookie 的大小一般不能超过4KB。浏览器每次向服务器发出请求，就会自动附上这段信息。</p>
 </blockquote>
-<h3 id="2-3-函数表达式"><a href="#2-3-函数表达式" class="headerlink" title="2,3. 函数表达式"></a>2,3. 函数表达式</h3><blockquote>
-<p>除了<code>function</code>命令声明函数，还可以采用变量赋值的方法</p>
+<ol>
+<li>服务器通过 <code>Set-Cookie</code> 头给客户端一串字符串</li>
+<li>客户端每次访问相同域名的网页时，必须带上这段字符串</li>
+<li>客户端要在一段时间内保存这个Cookie</li>
+<li>Cookie 默认在用户关闭页面后就失效，后台代码可以任意设置 Cookie 的过期时间</li>
+<li>大小大概在 4kb 以内</li>
+</ol>
+<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3><ol>
+<li>将<code>SessionID</code>（随机数）通过 Cookie 发给客户端</li>
+<li>客户端访问服务器时，服务器读取 <code>SessionID</code></li>
+<li>服务器有一块内存（哈希表）保存了所有 session</li>
+<li>通过 <code>SessionID</code> 我们可以得到对应用户的隐私信息，如 id、email</li>
+<li>这块内存（哈希表）就是服务器上的所有 session</li>
+</ol>
+<h3 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h3><ol>
+<li>LocalStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 LocalStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 LocalStorage（没有同源那么严格）</li>
+<li>每个域名 localStorage 最大存储量为 5Mb 左右（每个浏览器不一样）</li>
+<li>常用场景：记录有没有提示过用户（没有用的信息，不能记录密码）</li>
+<li>LocalStorage 永久有效，除非用户清理缓存</li>
+</ol>
+<h3 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h3><ol>
+<li>SessionStorage 跟 HTTP 无关</li>
+<li>HTTP 不会带上 SessionStorage 的值</li>
+<li>只有相同域名的页面才能互相读取 SessionStorage（没有同源那么严格）</li>
+<li>每个域名 SessionStorage 最大存储量为 5Mb 左右（每个浏览器不一样）</li>
+<li>SessionStorage在用户关闭页面（结束会话）后就失效</li>
+</ol>
+<h3 id="HTTP缓存"><a href="#HTTP缓存" class="headerlink" title="HTTP缓存"></a>HTTP缓存</h3><blockquote>
+<p><code>Cache-Control</code> 通用消息头被用于在http 请求和响应中通过指定指令来实现缓存机制。缓存指令是单向的, 这意味着在请求设置的指令，在响应中不一定包含相同的指令。</p>
 </blockquote>
-<p>变量赋值声明函数，有两种方法，一种是匿名函数赋值，一种是具名函数赋值。<br>（1）匿名函数赋值<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这种写法将一个匿名函数赋值给一个变量。这是，这个匿名函数又称函数表达式，因为赋值语句的右侧只能放表达式。</p>
-<p>(2)具名函数赋值</p>
-<p>采用函数表达式声明函数时，<code>function</code>命令后面不带有函数名。如果加上函数名，该函数名只在函数体内部有效，在函数体外部无效。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面代码在函数表达式中加入了函数名<code>b</code>，这个<code>b</code>只能在函数体内部使用，其他地方都不可用。<br>这种写法的用处有两个:  </p>
+<p>设置Cookie过期时间,两种方法</p>
+<ol>
+<li><code>Cache-Control: max-age=&lt;seconds&gt;</code>多少秒之后，Cookie过期(现在常用)</li>
+<li><code>Expires: Wed, 21 Oct 2015 07:28:00 GMT</code>格林尼治时间xxxx，Cookie过期（以前的用法，现在不常用）</li>
+</ol>
+<h3 id="ETag"><a href="#ETag" class="headerlink" title="ETag"></a>ETag</h3><blockquote>
+<p><code>ETag</code>HTTP响应头是资源的特定版本的标识符。这可以让缓存更高效，并节省带宽，因为如果内容没有改变，Web服务器不需要发送完整的响应。而如果内容发生了变化，使用ETag有助于防止资源的同时更新相互覆盖（“空中碰撞”）。</p>
+</blockquote>
+<p>区别：</p>
 <ul>
-<li>可以在函数体内部调用自身</li>
-<li>方便除错。除错工具显示函数调用栈时，将显示函数名，而不再显示这里是一个匿名函数。</li>
+<li>Cache-Control 直接不发请求。</li>
+<li>ETag 要发请求才行。（得到304）</li>
 </ul>
-<h3 id="4-Function-构造函数"><a href="#4-Function-构造函数" class="headerlink" title="4. Function 构造函数"></a>4. Function 构造函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'return x+y'</span>)</span><br></pre></td></tr></table></figure>
-<ul>
-<li>上面代码中，<code>Function</code>构造函数接受三个参数，除了最后一个参数是<code>a</code>函数的函数体，其他参数都是<code>a</code>函数的参数。  </li>
-<li>你可以传递任意数量的参数给<code>Function</code>构造函数，只有最后一个参数会被当成函数体，如果只有一个参数，该参数就是函数体。</li>
-<li><code>Funciton</code>构造函数可以不使用<code>new</code>命令，返回结果完全一样。</li>
-</ul>
-<h3 id="5-箭头函数"><a href="#5-箭头函数" class="headerlink" title="5. 箭头函数"></a>5. 箭头函数</h3><p>箭头函数其实就是函数表达式方法中，匿名函数赋值的省略版本。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">x,y</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 等于</span></span><br><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x+y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果箭头函数的代码块部分只有一句，则可以省略<code>return</code>和大括号。注意，必须同时省略。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x+y</span><br></pre></td></tr></table></figure></p>
-<p>如果箭头函数的参数只有一个，则可以省略圆括号。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> f = <span class="function"><span class="params">x</span> =&gt;</span> x*x</span><br></pre></td></tr></table></figure></p>
-<h2 id="函数的name属性"><a href="#函数的name属性" class="headerlink" title="函数的name属性"></a>函数的name属性</h2><blockquote>
-<p>函数的name属性返回函数的名字</p>
-</blockquote>
-<p><img src="https://user-gold-cdn.xitu.io/2018/8/28/16580d83c31f18e4?w=888&amp;h=790&amp;f=png&amp;s=132217" alt=""></p>
 
       
     </div>
@@ -354,8 +371,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/07/JS数组/" rel="next" title="JS数组">
-                <i class="fa fa-chevron-left"></i> JS数组
+              <a href="/2018/09/30/MVC/" rel="next" title="MVC">
+                <i class="fa fa-chevron-left"></i> MVC
               </a>
             
           </div>
@@ -363,10 +380,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/11/jQuery原理/" rel="prev" title="jQuery原理">
-                jQuery原理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何声明一个函数"><span class="nav-number">1.</span> <span class="nav-text">如何声明一个函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-function命令"><span class="nav-number">1.1.</span> <span class="nav-text">1.  function命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-函数表达式"><span class="nav-number">1.2.</span> <span class="nav-text">2,3. 函数表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Function-构造函数"><span class="nav-number">1.3.</span> <span class="nav-text">4. Function 构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-箭头函数"><span class="nav-number">1.4.</span> <span class="nav-text">5. 箭头函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数的name属性"><span class="nav-number">2.</span> <span class="nav-text">函数的name属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">1.</span> <span class="nav-text">Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Session"><span class="nav-number">2.</span> <span class="nav-text">Session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LocalStorage"><span class="nav-number">3.</span> <span class="nav-text">LocalStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SessionStorage"><span class="nav-number">4.</span> <span class="nav-text">SessionStorage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP缓存"><span class="nav-number">5.</span> <span class="nav-text">HTTP缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ETag"><span class="nav-number">6.</span> <span class="nav-text">ETag</span></a></li></ol></div>
             
 
           </div>
