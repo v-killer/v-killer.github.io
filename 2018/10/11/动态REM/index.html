@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="iframe标签嵌套页面 &amp;lt;iframe src=&amp;quot;https://www.baidu.com&amp;quot; name=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;iframe&amp;gt; 属性 height以像素格式指定frame的高度 width以百分比格式指定frame的宽度 frameborder取值为1时（默认值），告诉浏览器在当前iframe与其他iframe之间绘制边框，">
+<meta name="description" content="什么是REM 我们知道在CSS中有很多长度单位，比如  px 表示一个像素点 em 表示元素的font-size的计算值(一个汉字的宽度) vh 视口高度的1/100 vw 视口宽度的1/100  REM也是一个长度单位，这个单位代表根元素(html)的font-size的大小。  网页上的字体大小默认是16px。 如果chrome浏览器最小字号为12px,即使font-size设置为6px,字号">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTML常见标签详解">
-<meta property="og:url" content="http://yoursite.com/2018/08/28/HTML常见标签详解/index.html">
+<meta property="og:title" content="动态REM">
+<meta property="og:url" content="http://yoursite.com/2018/10/11/动态REM/index.html">
 <meta property="og:site_name" content="Study Notes">
-<meta property="og:description" content="iframe标签嵌套页面 &amp;lt;iframe src=&amp;quot;https://www.baidu.com&amp;quot; name=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;iframe&amp;gt; 属性 height以像素格式指定frame的高度 width以百分比格式指定frame的宽度 frameborder取值为1时（默认值），告诉浏览器在当前iframe与其他iframe之间绘制边框，">
+<meta property="og:description" content="什么是REM 我们知道在CSS中有很多长度单位，比如  px 表示一个像素点 em 表示元素的font-size的计算值(一个汉字的宽度) vh 视口高度的1/100 vw 视口宽度的1/100  REM也是一个长度单位，这个单位代表根元素(html)的font-size的大小。  网页上的字体大小默认是16px。 如果chrome浏览器最小字号为12px,即使font-size设置为6px,字号">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T06:26:46.785Z">
+<meta property="og:updated_time" content="2018-10-11T05:01:09.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HTML常见标签详解">
-<meta name="twitter:description" content="iframe标签嵌套页面 &amp;lt;iframe src=&amp;quot;https://www.baidu.com&amp;quot; name=&amp;quot;xxx&amp;quot;&amp;gt;&amp;lt;iframe&amp;gt; 属性 height以像素格式指定frame的高度 width以百分比格式指定frame的宽度 frameborder取值为1时（默认值），告诉浏览器在当前iframe与其他iframe之间绘制边框，">
+<meta name="twitter:title" content="动态REM">
+<meta name="twitter:description" content="什么是REM 我们知道在CSS中有很多长度单位，比如  px 表示一个像素点 em 表示元素的font-size的计算值(一个汉字的宽度) vh 视口高度的1/100 vw 视口宽度的1/100  REM也是一个长度单位，这个单位代表根元素(html)的font-size的大小。  网页上的字体大小默认是16px。 如果chrome浏览器最小字号为12px,即使font-size设置为6px,字号">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/08/28/HTML常见标签详解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/11/动态REM/"/>
 
 
 
 
 
-  <title>HTML常见标签详解 | Study Notes</title>
+  <title>动态REM | Study Notes</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/28/HTML常见标签详解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/11/动态REM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="剑指天涯心有梦">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">HTML常见标签详解</h1>
+          <h1 class="post-title" itemprop="name headline">动态REM</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T14:25:13+08:00">
-                2018-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T13:00:45+08:00">
+                2018-10-11
               </time>
             
 
@@ -299,69 +299,28 @@
       
 
       
-        <h3 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h3><p><strong>嵌套页面</strong></p>
-<p><code>&lt;iframe src=&quot;https://www.baidu.com&quot; name=&quot;xxx&quot;&gt;&lt;iframe&gt;</code></p>
-<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>height</code>以像素格式指定frame的高度</li>
-<li><code>width</code>以百分比格式指定frame的宽度</li>
-<li><code>frameborder</code>取值为1时（默认值），告诉浏览器在当前iframe与其他iframe之间绘制边框，取0时则无需绘制此边框。（一般写做<code>frameborder=&quot;0&quot;</code>）</li>
-<li><code>name</code>嵌入的浏览上下文框架的名称。该名称可以用作<code>&lt;a&gt;</code>标签,<code>&lt;form&gt;</code>标签的target属性值，或<code>&lt;input&gt;</code> 标签和 <code>&lt;button&gt;</code>标签的formtaget属性值</li>
-<li><code>src</code>嵌套页面的URL地址。（支持相对路径）</li>
-</ol>
-<h3 id="a标签"><a href="#a标签" class="headerlink" title="a标签"></a>a标签</h3><p>跳转页面(HTTP GET 请求)</p>
-<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>target</code>属性</li>
-</ol>
-<p>该属性指定在何处显示链接的资源。 取值为标签（tab），窗口（window），或框架（iframe）等浏览上下文的名称或其他关键词。以下关键字具有特殊的意义:</p>
+        <h3 id="什么是REM"><a href="#什么是REM" class="headerlink" title="什么是REM"></a>什么是REM</h3><hr>
+<p>我们知道在CSS中有很多长度单位，比如</p>
 <ul>
-<li><code>_blank</code>新窗口打开</li>
-<li><code>_self</code>当前页面加载</li>
-<li><code>_parent</code>加载响应到当前框架的HTML4父框架或当前的HTML5浏览上下文的父浏览上下文。</li>
-<li><code>_top</code>加载响应进入顶层浏览上下文</li>
+<li>px 表示一个像素点</li>
+<li>em 表示元素的<code>font-size</code>的计算值(一个汉字的宽度)</li>
+<li>vh 视口高度的1/100</li>
+<li>vw 视口宽度的1/100</li>
 </ul>
-<ol start="2">
-<li><code>download</code>属性</li>
-</ol>
-<p>此属性指示浏览器下载URL而不是导航到URL，因此将提示用户将其保存为本地文件。如果http响应的Content-type写成<code>Content-type: application/octet-stream</code>那么浏览器就会以下载的形式接受请求（无需使用download属性）</p>
-<ol start="3">
-<li><code>href</code>属性</li>
-</ol>
+<p>REM也是一个长度单位，这个单位代表根元素(html)的<code>font-size</code>的大小。</p>
 <ul>
-<li><code>&lt;a href=&quot;//qq.com&quot;&gt;&lt;/a&gt;</code>a标签的无协议绝对地址，当前页面是什么协议，跳转页面是什么协议。</li>
-<li><code>&lt;a href=&quot;#xxx&quot;&gt;&lt;/a&gt;</code>页面内跳转（不发起请求,除了锚点其余均发起请求)可以使用<code>href=&quot;#&quot;</code>或<code>href=&quot;#&quot;</code>链接返回页面顶部。</li>
-<li><code>&lt;a href=?name=xxx&gt;&lt;/a&gt;</code>浏览器发起<code>?name=xxx</code>的请求</li>
-<li><code>&lt;a href=./xxx.html&gt;&lt;/a&gt;</code></li>
-<li><code>&lt;a href=&quot;javascript: alert(1);&quot;&gt;&lt;/a&gt;</code>伪协议。　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　如果要写一个点击后不会跳转的ａ标签，可以写为<code>&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;</code></li>
+<li>网页上的字体大小默认是16px。</li>
+<li>如果chrome浏览器最小字号为12px,即使<code>font-size</code>设置为6px,字号还是12px。（其他浏览器不是）</li>
+<li>em和rem的区别：em取自己的<code>font-size</code>计算值，rem取根元素的<code>font-size</code>计算值</li>
 </ul>
-<h3 id="form标签"><a href="#form标签" class="headerlink" title="form标签"></a>form标签</h3><p>跳转页面(HTTP POST 请求)</p>
-<ul>
-<li>如果form表单里面没有提交按钮，就无法提交form。（除非你用JS）</li>
-</ul>
-<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>method</code></li>
-</ol>
-<ul>
-<li><code>post</code>:指的是HTTP，表单数据会包含在表单体内然后发送给服务器。</li>
-<li><code>get</code>:表单数据会附加在 <code>action</code> 属性的URI中，并以 ‘?’ 作为分隔符, 然后这样得到的 URI 再发送给服务器。</li>
-</ul>
-<p><code>action</code>  一个处理这个form信息的程序所在的URL。</p>
-<h3 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h3><p><code>&lt;input&gt;</code> 元素用于为基于Web的表单创建交互式控件，以便接受来自用户的数据。</p>
-<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>type</code> 控件类型的显示。如果这个属性没有指定，默认的类型是 text。可用的值包括：</li>
-</ol>
-<ul>
-<li><code>submit</code>:用于提交表单的按钮</li>
-<li><code>button</code>无缺省行为按钮</li>
-<li><code>checkbox</code>:复选框。（多个复选框需要给同一个name）</li>
-<li><code>radio</code>:单选按钮。（多个单选按钮需要给同一个name,否则可以同时选中）<h3 id="button标签"><a href="#button标签" class="headerlink" title="button标签"></a>button标签</h3></li>
-</ul>
-<h4 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><code>type</code> button的类型。可选值:</li>
-</ol>
-<ul>
-<li><code>submit</code>:此按钮提交表单数据给服务器。<strong>未指定时，此值为默认值</strong><h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3>它通常关联一个控件，或者是将控件放置在label元素内</li>
-</ul>
-<p><code>&lt;label&gt;用户名&lt;input type=&quot;text name=&quot;xxx&quot;&gt;&lt;/label&gt;</code></p>
+<h3 id="手机专用的自适应方案"><a href="#手机专用的自适应方案" class="headerlink" title="手机专用的自适应方案"></a>手机专用的自适应方案</h3><p>由于rem是根元素的<code>font-size</code>，我们直接设置根元素的<code>font-size</code>等于设备宽度，便可以实现手机自适应。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    var pageWidth = window.innerWidth</span><br><span class="line">    document.write(&apos;&lt;style&gt;html&#123;font-size:&apos;+pageWidth+&apos;px;&#125;&lt;/style&gt;&apos;)</span><br><span class="line">&lt;/script</span><br></pre></td></tr></table></figure></p>
+<p>上面代码，将根元素的<code>font-size</code>设置为设备宽度。那么我们写页面的时候，直接使用rem单位作为长度单位，便可以实现自适应布局。</p>
+<blockquote>
+<p>rem可以与其他单位同时存在<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">font-size: 16px;</span><br><span class="line">border: 1px solid red;</span><br><span class="line">width: 0.5rem;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>但是在写页面的时候，我们使用的设计图是px单位的，那我们写成rem需要换算，就很麻烦。所以我们使用sass，这个工具可以将px转为rem。具体用法参考<a href="http://www.ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="noopener">sass用法指南</a>。</p>
+<p>在scss文件里添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@function px( $px )&#123;</span><br><span class="line">  @return $px/$designWidth*10 + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$designWidth : 640; // 640 是设计稿的宽度，你要根据设计稿的宽度填写。如果设计师的设计稿宽度不统一，就杀死设计师，换个新的。</span><br><span class="line"></span><br><span class="line">.child&#123;</span><br><span class="line">  width: px(320);</span><br><span class="line">  height: px(160);</span><br><span class="line">  margin: px(40) px(40);</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  float: left;</span><br><span class="line">  font-size: 1.2em;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>即可实现px自动变rem</p>
 
       
     </div>
@@ -386,8 +345,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/27/git基础/" rel="next" title="git基础">
-                <i class="fa fa-chevron-left"></i> git基础
+              <a href="/2018/10/09/深入HTTP/" rel="next" title="深入HTTP">
+                <i class="fa fa-chevron-left"></i> 深入HTTP
               </a>
             
           </div>
@@ -395,10 +354,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/28/CSS居中/" rel="prev" title="CSS居中">
-                CSS居中 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe标签"><span class="nav-number">1.</span> <span class="nav-text">iframe标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a标签"><span class="nav-number">2.</span> <span class="nav-text">a标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-1"><span class="nav-number">2.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#form标签"><span class="nav-number">3.</span> <span class="nav-text">form标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-2"><span class="nav-number">3.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#input标签"><span class="nav-number">4.</span> <span class="nav-text">input标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-3"><span class="nav-number">4.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#button标签"><span class="nav-number">5.</span> <span class="nav-text">button标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性-4"><span class="nav-number">5.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#label标签"><span class="nav-number">6.</span> <span class="nav-text">label标签</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是REM"><span class="nav-number">1.</span> <span class="nav-text">什么是REM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#手机专用的自适应方案"><span class="nav-number">2.</span> <span class="nav-text">手机专用的自适应方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SASS"><span class="nav-number">3.</span> <span class="nav-text">SASS</span></a></li></ol></div>
             
 
           </div>
